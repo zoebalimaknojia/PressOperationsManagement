@@ -1,0 +1,247 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="PresentationLayer.Window4"
+        Title="YamunaArtsPrinters" Height="311" Width="433" Loaded="Window_Loaded">
+	<Window.Resources>
+		<VisualBrush x:Key="uname" Visual="{Binding ElementName=label1}"/>
+		<Storyboard x:Key="spin">
+			<Rotation3DAnimationUsingKeyFrames Storyboard.TargetProperty="(Model3D.Transform).(Transform3DGroup.Children)[2].(RotateTransform3D.Rotation)" Storyboard.TargetName="Model">
+				<EasingRotation3DKeyFrame KeyTime="0">
+					<EasingRotation3DKeyFrame.Value>
+						<AxisAngleRotation3D Axis="0,1,0" Angle="178"/>
+					</EasingRotation3DKeyFrame.Value>
+				</EasingRotation3DKeyFrame>
+				<EasingRotation3DKeyFrame KeyTime="0:0:1">
+					<EasingRotation3DKeyFrame.Value>
+						<AxisAngleRotation3D Axis="-0.577,0.577,-0.577" Angle="0"/>
+					</EasingRotation3DKeyFrame.Value>
+				</EasingRotation3DKeyFrame>
+			</Rotation3DAnimationUsingKeyFrames>
+		</Storyboard>
+		<VisualBrush x:Key="passwd" Visual="{Binding ElementName=label2}"/>
+		<Storyboard x:Key="spinpass">
+			<Rotation3DAnimationUsingKeyFrames Storyboard.TargetProperty="(Model3D.Transform).(Transform3DGroup.Children)[2].(RotateTransform3D.Rotation)" Storyboard.TargetName="Model1">
+				<EasingRotation3DKeyFrame KeyTime="0">
+					<EasingRotation3DKeyFrame.Value>
+						<AxisAngleRotation3D Axis="0,1,0" Angle="180"/>
+					</EasingRotation3DKeyFrame.Value>
+				</EasingRotation3DKeyFrame>
+				<EasingRotation3DKeyFrame KeyTime="0:0:1">
+					<EasingRotation3DKeyFrame.Value>
+						<AxisAngleRotation3D Axis="-0.577,0.577,-0.577" Angle="0"/>
+					</EasingRotation3DKeyFrame.Value>
+				</EasingRotation3DKeyFrame>
+			</Rotation3DAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="spinuname">
+			<Rotation3DAnimationUsingKeyFrames Storyboard.TargetProperty="(Model3D.Transform).(Transform3DGroup.Children)[2].(RotateTransform3D.Rotation)" Storyboard.TargetName="Model">
+				<EasingRotation3DKeyFrame KeyTime="0">
+					<EasingRotation3DKeyFrame.Value>
+						<AxisAngleRotation3D Axis="0,1,0" Angle="181"/>
+					</EasingRotation3DKeyFrame.Value>
+				</EasingRotation3DKeyFrame>
+				<EasingRotation3DKeyFrame KeyTime="0:0:1">
+					<EasingRotation3DKeyFrame.Value>
+						<AxisAngleRotation3D Axis="-0.577,0.577,-0.577" Angle="0"/>
+					</EasingRotation3DKeyFrame.Value>
+				</EasingRotation3DKeyFrame>
+			</Rotation3DAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(LinearGradientBrush.StartPoint)" Storyboard.TargetName="button1">
+				<EasingPointKeyFrame KeyTime="0:0:1" Value="-0.081,0.039"/>
+			</PointAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(LinearGradientBrush.EndPoint)" Storyboard.TargetName="button1">
+				<EasingPointKeyFrame KeyTime="0:0:1" Value="0.081,0.961"/>
+			</PointAnimationUsingKeyFrames>
+			<!--<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="button2">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="-3"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="button2">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="-4"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="button2">
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFC26464"/>
+			</ColorAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(LinearGradientBrush.StartPoint)" Storyboard.TargetName="button2">
+				<EasingPointKeyFrame KeyTime="0:0:1" Value="-0.063,0.027"/>
+			</PointAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(LinearGradientBrush.EndPoint)" Storyboard.TargetName="button2">
+				<EasingPointKeyFrame KeyTime="0:0:1" Value="0.063,0.973"/>
+			</PointAnimationUsingKeyFrames>-->
+		</Storyboard>
+		<Storyboard x:Key="spinpass1">
+			<Rotation3DAnimationUsingKeyFrames Storyboard.TargetProperty="(Model3D.Transform).(Transform3DGroup.Children)[2].(RotateTransform3D.Rotation)" Storyboard.TargetName="Model1">
+				<EasingRotation3DKeyFrame KeyTime="0">
+					<EasingRotation3DKeyFrame.Value>
+						<AxisAngleRotation3D Axis="0,1,0" Angle="180"/>
+					</EasingRotation3DKeyFrame.Value>
+				</EasingRotation3DKeyFrame>
+				<EasingRotation3DKeyFrame KeyTime="0:0:1">
+					<EasingRotation3DKeyFrame.Value>
+						<AxisAngleRotation3D Axis="-0.577,0.577,-0.577" Angle="0"/>
+					</EasingRotation3DKeyFrame.Value>
+				</EasingRotation3DKeyFrame>
+			</Rotation3DAnimationUsingKeyFrames>
+		</Storyboard>
+	</Window.Resources>
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource spin}"/>
+			<BeginStoryboard Storyboard="{StaticResource spinpass}"/>
+			<BeginStoryboard Storyboard="{StaticResource spinuname}"/>
+			<BeginStoryboard Storyboard="{StaticResource spinpass1}"/>
+		</EventTrigger>
+	</Window.Triggers>
+    <Grid ShowGridLines="False" VerticalAlignment="Center" OpacityMask="{x:Null}" Height="276">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400*" />
+            <ColumnDefinition Width="11*" />
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Left" Height="58" Margin="58,27,0,0" VerticalAlignment="Top" Width="105" Visibility="Hidden">
+    		<Label Content="User Name" x:Name="label1" FontSize="16" FontWeight="Bold" FontStyle="Italic" />
+    	</Grid>
+        <Grid HorizontalAlignment="Left" Margin="58,98,0,114" Width="105" Visibility="Hidden">
+        	<Label Content="Password" Height="50" x:Name="label2" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontStyle="Italic" />
+        </Grid>
+        <TextBox Height="42" HorizontalAlignment="Left" Margin="169,21,0,0" x:Name="textBox1" VerticalAlignment="Top" Width="215" FontSize="22" VerticalContentAlignment="Center" TabIndex="1" Text="" />
+        <Button Content="Login" HorizontalAlignment="Left" Margin="159,182,0,39" x:Name="button1" Width="131" Click="button1_Click" Height="55" FontSize="20" FontWeight="Bold" FontStyle="Italic" IsDefault="True">
+        	<Button.Background>
+        		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+        			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+        			<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+        			<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+        			<GradientStop Color="#FFD28383" Offset="1"/>
+        		</LinearGradientBrush>
+        	</Button.Background>
+        </Button>
+        <Viewport3D HorizontalAlignment="Left" Height="58" Margin="58,27,0,0" VerticalAlignment="Top" Width="105">
+        	<Viewport3D.Camera>
+        		<PerspectiveCamera FieldOfView="45" FarPlaneDistance="131.11677105991811" LookDirection="0,0,-43.705590353306" NearPlaneDistance="0.1" Position="-4.9737991503207E-14,0,43.705590353306" UpDirection="0,1,0"/>
+        	</Viewport3D.Camera>
+        	<ModelVisual3D x:Name="ModelContainer">
+        		<ModelVisual3D.Content>
+        			<GeometryModel3D x:Name="Model" d:Bounds="-18.1034482758621,-10,0,36.2068965517241,20,0">
+        				<GeometryModel3D.Transform>
+        					<Transform3DGroup>
+        						<TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+        						<ScaleTransform3D ScaleZ="1" ScaleY="1" ScaleX="1"/>
+        						<RotateTransform3D d:EulerAngles="0,0,0">
+        							<RotateTransform3D.Rotation>
+        								<AxisAngleRotation3D Axis="0,1,0" Angle="0"/>
+        							</RotateTransform3D.Rotation>
+        						</RotateTransform3D>
+        						<TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+        						<TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+        					</Transform3DGroup>
+        				</GeometryModel3D.Transform>
+        				<GeometryModel3D.Geometry>
+        					<MeshGeometry3D Normals="0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1" Positions="-18.103448,-10,0 -14.08046,-10,0 -10.057471,-10,0 -6.0344828,-10,0 -2.0114943,-10,0 2.0114943,-10,0 6.0344828,-10,0 10.057471,-10,0 14.08046,-10,0 18.103448,-10,0 -18.103448,-7.7777778,0 -14.08046,-7.7777778,0 -10.057471,-7.7777778,0
+-6.0344828,-7.7777778,0 -2.0114943,-7.7777778,0 2.0114943,-7.7777778,0 6.0344828,-7.7777778,0 10.057471,-7.7777778,0 14.08046,-7.7777778,0 18.103448,-7.7777778,0 -18.103448,-5.5555556,0 -14.08046,-5.5555556,0 -10.057471,-5.5555556,0 -6.0344828,-5.5555556,0 -2.0114943,-5.5555556,0 2.0114943,-5.5555556,0
+6.0344828,-5.5555556,0 10.057471,-5.5555556,0 14.08046,-5.5555556,0 18.103448,-5.5555556,0 -18.103448,-3.3333333,0 -14.08046,-3.3333333,0 -10.057471,-3.3333333,0 -6.0344828,-3.3333333,0 -2.0114943,-3.3333333,0 2.0114943,-3.3333333,0 6.0344828,-3.3333333,0 10.057471,-3.3333333,0 14.08046,-3.3333333,0
+18.103448,-3.3333333,0 -18.103448,-1.1111111,0 -14.08046,-1.1111111,0 -10.057471,-1.1111111,0 -6.0344828,-1.1111111,0 -2.0114943,-1.1111111,0 2.0114943,-1.1111111,0 6.0344828,-1.1111111,0 10.057471,-1.1111111,0 14.08046,-1.1111111,0 18.103448,-1.1111111,0 -18.103448,1.1111111,0 -14.08046,1.1111111,0
+-10.057471,1.1111111,0 -6.0344828,1.1111111,0 -2.0114943,1.1111111,0 2.0114943,1.1111111,0 6.0344828,1.1111111,0 10.057471,1.1111111,0 14.08046,1.1111111,0 18.103448,1.1111111,0 -18.103448,3.3333333,0 -14.08046,3.3333333,0 -10.057471,3.3333333,0 -6.0344828,3.3333333,0 -2.0114943,3.3333333,0
+2.0114943,3.3333333,0 6.0344828,3.3333333,0 10.057471,3.3333333,0 14.08046,3.3333333,0 18.103448,3.3333333,0 -18.103448,5.5555556,0 -14.08046,5.5555556,0 -10.057471,5.5555556,0 -6.0344828,5.5555556,0 -2.0114943,5.5555556,0 2.0114943,5.5555556,0 6.0344828,5.5555556,0 10.057471,5.5555556,0
+14.08046,5.5555556,0 18.103448,5.5555556,0 -18.103448,7.7777778,0 -14.08046,7.7777778,0 -10.057471,7.7777778,0 -6.0344828,7.7777778,0 -2.0114943,7.7777778,0 2.0114943,7.7777778,0 6.0344828,7.7777778,0 10.057471,7.7777778,0 14.08046,7.7777778,0 18.103448,7.7777778,0 -18.103448,10,0
+-14.08046,10,0 -10.057471,10,0 -6.0344828,10,0 -2.0114943,10,0 2.0114943,10,0 6.0344828,10,0 10.057471,10,0 14.08046,10,0 18.103448,10,0" TextureCoordinates="0,58 11.666667,58 23.333333,58 35,58 46.666667,58 58.333333,58 70,58 81.666667,58 93.333333,58 105,58 0,51.555556 11.666667,51.555556 23.333333,51.555556 35,51.555556 46.666667,51.555556 58.333333,51.555556 70,51.555556 81.666667,51.555556 93.333333,51.555556 105,51.555556 0,45.111111 11.666667,45.111111 23.333333,45.111111
+35,45.111111 46.666667,45.111111 58.333333,45.111111 70,45.111111 81.666667,45.111111 93.333333,45.111111 105,45.111111 0,38.666667 11.666667,38.666667 23.333333,38.666667 35,38.666667 46.666667,38.666667 58.333333,38.666667 70,38.666667 81.666667,38.666667 93.333333,38.666667 105,38.666667 0,32.222222 11.666667,32.222222 23.333333,32.222222 35,32.222222 46.666667,32.222222 58.333333,32.222222
+70,32.222222 81.666667,32.222222 93.333333,32.222222 105,32.222222 0,25.777778 11.666667,25.777778 23.333333,25.777778 35,25.777778 46.666667,25.777778 58.333333,25.777778 70,25.777778 81.666667,25.777778 93.333333,25.777778 105,25.777778 0,19.333333 11.666667,19.333333 23.333333,19.333333 35,19.333333 46.666667,19.333333 58.333333,19.333333 70,19.333333 81.666667,19.333333 93.333333,19.333333
+105,19.333333 0,12.888889 11.666667,12.888889 23.333333,12.888889 35,12.888889 46.666667,12.888889 58.333333,12.888889 70,12.888889 81.666667,12.888889 93.333333,12.888889 105,12.888889 0,6.4444444 11.666667,6.4444444 23.333333,6.4444444 35,6.4444444 46.666667,6.4444444 58.333333,6.4444444 70,6.4444444 81.666667,6.4444444 93.333333,6.4444444 105,6.4444444 0,0 11.666667,0
+23.333333,0 35,0 46.666667,0 58.333333,0 70,0 81.666667,0 93.333333,0 105,0" TriangleIndices="0 1 10 1 11 10 1 2 11 2 12 11 2 3 12 3 13 12 3 4 13 4 14 13 4 5 14 5 15 14 5 6 15 6 16 15 6 7 16 7 17 16 7 8 17 8 18 17 8 9 18 9 19 18 10 11 20 11 21 20 11 12 21 12 22 21 12 13 22 13 23 22 13 14 23 14 24 23 14 15 24 15 25 24 15 16 25 16 26 25 16 17 26 17 27 26 17 18 27 18 28 27 18 19 28 19 29 28 20 21 30 21 31 30 21 22 31 22 32 31 22 23 32 23 33 32 23 24 33 24 34 33 24 25 34 25 35 34 25 26 35 26 36 35 26 27 36 27 37 36 27 28 37 28 38 37 28 29 38 29 39 38 30 31 40 31 41 40 31 32 41 32 42 41 32 33 42 33 43 42 33 34 43 34 44 43 34 35 44 35 45 44 35 36 45 36 46 45 36 37 46 37 47 46 37 38 47 38 48 47 38 39 48 39 49 48 40 41 50 41 51 50 41 42 51 42 52 51 42 43 52 43 53 52 43 44 53 44 54 53 44 45 54 45 55 54 45 46 55 46 56 55 46 47 56 47 57 56 47 48 57 48 58 57 48 49 58 49 59 58 50 51 60 51 61 60 51 52 61 52 62 61 52 53 62 53 63 62 53 54 63 54 64 63 54 55 64 55 65 64 55 56 65 56 66 65 56 57 66 57 67 66 57 58 67 58 68 67 58 59 68 59 69 68 60 61 70 61 71 70 61 62 71 62 72 71 62 63 72 63 73 72 63 64 73 64 74 73 64 65 74 65 75 74 65 66 75 66 76 75 66 67 76 67 77 76 67 68 77 68 78 77 68 69 78 69 79 78 70 71 80 71 81 80 71 72 81 72 82 81 72 73 82 73 83 82 73 74 83 74 84 83 74 75 84 75 85 84 75 76 85 76 86 85 76 77 86 77 87 86 77 78 87 78 88 87 78 79 88 79 89 88 80 81 90 81 91 90 81 82 91 82 92 91 82 83 92 83 93 92 83 84 93 84 94 93 84 85 94 85 95 94 85 86 95 86 96 95 86 87 96 87 97 96 87 88 97 88 98 97 88 89 98 89 99 98"/>
+        				</GeometryModel3D.Geometry>
+        				<GeometryModel3D.Material>
+        					<DiffuseMaterial Brush="{DynamicResource uname}"/>
+        				</GeometryModel3D.Material>
+        			</GeometryModel3D>
+        		</ModelVisual3D.Content>
+        	</ModelVisual3D>
+        	<ModelVisual3D x:Name="AmbientContainer">
+        		<ModelVisual3D.Content>
+        			<AmbientLight x:Name="Ambient" Color="Gray"/>
+        		</ModelVisual3D.Content>
+        	</ModelVisual3D>
+        	<ModelVisual3D x:Name="DirectionalContainer">
+        		<ModelVisual3D.Content>
+        			<DirectionalLight x:Name="Directional" Color="#FF7F7F7F" Direction="0,0,-1">
+        				<DirectionalLight.Transform>
+        					<TranslateTransform3D OffsetZ="3" OffsetX="0" OffsetY="0"/>
+        				</DirectionalLight.Transform>
+        			</DirectionalLight>
+        		</ModelVisual3D.Content>
+        	</ModelVisual3D>
+        </Viewport3D>
+        <Viewport3D HorizontalAlignment="Left" Margin="58,90,0,122" Width="105">
+        	<Viewport3D.Camera>
+        		<PerspectiveCamera FieldOfView="45" FarPlaneDistance="152.095454429505" LookDirection="0,0,-50.698484809835" NearPlaneDistance="0.1" Position="0,0,50.698484809835" UpDirection="0,1,0"/>
+        	</Viewport3D.Camera>
+        	<ModelVisual3D x:Name="ModelContainer1">
+        		<ModelVisual3D.Content>
+        			<GeometryModel3D x:Name="Model1" d:Bounds="-21,-10,0,42,20,0">
+        				<GeometryModel3D.Transform>
+        					<Transform3DGroup>
+        						<TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+        						<ScaleTransform3D ScaleZ="1" ScaleY="1" ScaleX="1"/>
+        						<RotateTransform3D d:EulerAngles="0,0,0">
+        							<RotateTransform3D.Rotation>
+        								<AxisAngleRotation3D Axis="0,1,0" Angle="0"/>
+        							</RotateTransform3D.Rotation>
+        						</RotateTransform3D>
+        						<TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+        						<TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+        					</Transform3DGroup>
+        				</GeometryModel3D.Transform>
+        				<GeometryModel3D.Geometry>
+        					<MeshGeometry3D Normals="0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1" Positions="-21,-10,0 -16.333333,-10,0 -11.666667,-10,0 -7,-10,0 -2.3333333,-10,0 2.3333333,-10,0 7,-10,0 11.666667,-10,0 16.333333,-10,0 21,-10,0 -21,-7.7777778,0 -16.333333,-7.7777778,0 -11.666667,-7.7777778,0
+-7,-7.7777778,0 -2.3333333,-7.7777778,0 2.3333333,-7.7777778,0 7,-7.7777778,0 11.666667,-7.7777778,0 16.333333,-7.7777778,0 21,-7.7777778,0 -21,-5.5555556,0 -16.333333,-5.5555556,0 -11.666667,-5.5555556,0 -7,-5.5555556,0 -2.3333333,-5.5555556,0 2.3333333,-5.5555556,0
+7,-5.5555556,0 11.666667,-5.5555556,0 16.333333,-5.5555556,0 21,-5.5555556,0 -21,-3.3333333,0 -16.333333,-3.3333333,0 -11.666667,-3.3333333,0 -7,-3.3333333,0 -2.3333333,-3.3333333,0 2.3333333,-3.3333333,0 7,-3.3333333,0 11.666667,-3.3333333,0 16.333333,-3.3333333,0
+21,-3.3333333,0 -21,-1.1111111,0 -16.333333,-1.1111111,0 -11.666667,-1.1111111,0 -7,-1.1111111,0 -2.3333333,-1.1111111,0 2.3333333,-1.1111111,0 7,-1.1111111,0 11.666667,-1.1111111,0 16.333333,-1.1111111,0 21,-1.1111111,0 -21,1.1111111,0 -16.333333,1.1111111,0
+-11.666667,1.1111111,0 -7,1.1111111,0 -2.3333333,1.1111111,0 2.3333333,1.1111111,0 7,1.1111111,0 11.666667,1.1111111,0 16.333333,1.1111111,0 21,1.1111111,0 -21,3.3333333,0 -16.333333,3.3333333,0 -11.666667,3.3333333,0 -7,3.3333333,0 -2.3333333,3.3333333,0
+2.3333333,3.3333333,0 7,3.3333333,0 11.666667,3.3333333,0 16.333333,3.3333333,0 21,3.3333333,0 -21,5.5555556,0 -16.333333,5.5555556,0 -11.666667,5.5555556,0 -7,5.5555556,0 -2.3333333,5.5555556,0 2.3333333,5.5555556,0 7,5.5555556,0 11.666667,5.5555556,0
+16.333333,5.5555556,0 21,5.5555556,0 -21,7.7777778,0 -16.333333,7.7777778,0 -11.666667,7.7777778,0 -7,7.7777778,0 -2.3333333,7.7777778,0 2.3333333,7.7777778,0 7,7.7777778,0 11.666667,7.7777778,0 16.333333,7.7777778,0 21,7.7777778,0 -21,10,0
+-16.333333,10,0 -11.666667,10,0 -7,10,0 -2.3333333,10,0 2.3333333,10,0 7,10,0 11.666667,10,0 16.333333,10,0 21,10,0" TextureCoordinates="0,50 11.666667,50 23.333333,50 35,50 46.666667,50 58.333333,50 70,50 81.666667,50 93.333333,50 105,50 0,44.444444 11.666667,44.444444 23.333333,44.444444 35,44.444444 46.666667,44.444444 58.333333,44.444444 70,44.444444 81.666667,44.444444 93.333333,44.444444 105,44.444444 0,38.888889 11.666667,38.888889 23.333333,38.888889
+35,38.888889 46.666667,38.888889 58.333333,38.888889 70,38.888889 81.666667,38.888889 93.333333,38.888889 105,38.888889 0,33.333333 11.666667,33.333333 23.333333,33.333333 35,33.333333 46.666667,33.333333 58.333333,33.333333 70,33.333333 81.666667,33.333333 93.333333,33.333333 105,33.333333 0,27.777778 11.666667,27.777778 23.333333,27.777778 35,27.777778 46.666667,27.777778 58.333333,27.777778
+70,27.777778 81.666667,27.777778 93.333333,27.777778 105,27.777778 0,22.222222 11.666667,22.222222 23.333333,22.222222 35,22.222222 46.666667,22.222222 58.333333,22.222222 70,22.222222 81.666667,22.222222 93.333333,22.222222 105,22.222222 0,16.666667 11.666667,16.666667 23.333333,16.666667 35,16.666667 46.666667,16.666667 58.333333,16.666667 70,16.666667 81.666667,16.666667 93.333333,16.666667
+105,16.666667 0,11.111111 11.666667,11.111111 23.333333,11.111111 35,11.111111 46.666667,11.111111 58.333333,11.111111 70,11.111111 81.666667,11.111111 93.333333,11.111111 105,11.111111 0,5.5555556 11.666667,5.5555556 23.333333,5.5555556 35,5.5555556 46.666667,5.5555556 58.333333,5.5555556 70,5.5555556 81.666667,5.5555556 93.333333,5.5555556 105,5.5555556 0,0 11.666667,0
+23.333333,0 35,0 46.666667,0 58.333333,0 70,0 81.666667,0 93.333333,0 105,0" TriangleIndices="0 1 10 1 11 10 1 2 11 2 12 11 2 3 12 3 13 12 3 4 13 4 14 13 4 5 14 5 15 14 5 6 15 6 16 15 6 7 16 7 17 16 7 8 17 8 18 17 8 9 18 9 19 18 10 11 20 11 21 20 11 12 21 12 22 21 12 13 22 13 23 22 13 14 23 14 24 23 14 15 24 15 25 24 15 16 25 16 26 25 16 17 26 17 27 26 17 18 27 18 28 27 18 19 28 19 29 28 20 21 30 21 31 30 21 22 31 22 32 31 22 23 32 23 33 32 23 24 33 24 34 33 24 25 34 25 35 34 25 26 35 26 36 35 26 27 36 27 37 36 27 28 37 28 38 37 28 29 38 29 39 38 30 31 40 31 41 40 31 32 41 32 42 41 32 33 42 33 43 42 33 34 43 34 44 43 34 35 44 35 45 44 35 36 45 36 46 45 36 37 46 37 47 46 37 38 47 38 48 47 38 39 48 39 49 48 40 41 50 41 51 50 41 42 51 42 52 51 42 43 52 43 53 52 43 44 53 44 54 53 44 45 54 45 55 54 45 46 55 46 56 55 46 47 56 47 57 56 47 48 57 48 58 57 48 49 58 49 59 58 50 51 60 51 61 60 51 52 61 52 62 61 52 53 62 53 63 62 53 54 63 54 64 63 54 55 64 55 65 64 55 56 65 56 66 65 56 57 66 57 67 66 57 58 67 58 68 67 58 59 68 59 69 68 60 61 70 61 71 70 61 62 71 62 72 71 62 63 72 63 73 72 63 64 73 64 74 73 64 65 74 65 75 74 65 66 75 66 76 75 66 67 76 67 77 76 67 68 77 68 78 77 68 69 78 69 79 78 70 71 80 71 81 80 71 72 81 72 82 81 72 73 82 73 83 82 73 74 83 74 84 83 74 75 84 75 85 84 75 76 85 76 86 85 76 77 86 77 87 86 77 78 87 78 88 87 78 79 88 79 89 88 80 81 90 81 91 90 81 82 91 82 92 91 82 83 92 83 93 92 83 84 93 84 94 93 84 85 94 85 95 94 85 86 95 86 96 95 86 87 96 87 97 96 87 88 97 88 98 97 88 89 98 89 99 98"/>
+        				</GeometryModel3D.Geometry>
+        				<GeometryModel3D.Material>
+        					<DiffuseMaterial Brush="{DynamicResource passwd}"/>
+        				</GeometryModel3D.Material>
+        			</GeometryModel3D>
+        		</ModelVisual3D.Content>
+        	</ModelVisual3D>
+        	<ModelVisual3D x:Name="AmbientContainer1">
+        		<ModelVisual3D.Content>
+        			<AmbientLight x:Name="Ambient1" Color="Gray"/>
+        		</ModelVisual3D.Content>
+        	</ModelVisual3D>
+        	<ModelVisual3D x:Name="DirectionalContainer1">
+        		<ModelVisual3D.Content>
+        			<DirectionalLight x:Name="Directional1" Color="#FF7F7F7F" Direction="0,0,-1">
+        				<DirectionalLight.Transform>
+        					<TranslateTransform3D OffsetZ="3" OffsetX="0" OffsetY="0"/>
+        				</DirectionalLight.Transform>
+        			</DirectionalLight>
+        		</ModelVisual3D.Content>
+        	</ModelVisual3D>
+        </Viewport3D>
+        <PasswordBox Height="40" HorizontalAlignment="Left" Margin="169,93,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="215" FontSize="22" VerticalContentAlignment="Center" TabIndex="2" Password="" />
+        <Label Content="Invalid UserName or Password" Height="28" HorizontalAlignment="Left" Margin="132,147,0,0" Name="label3" VerticalAlignment="Top" Width="191" Foreground="Red" FontWeight="Bold" />
+        <Grid.Background>
+            <ImageBrush ImageSource="/PresentationLayer;component/Images/YAPS1.png" />
+        </Grid.Background>
+    </Grid>
+</Window>

@@ -1,0 +1,1 @@
+Keep both file(YAPSFinal) and folder(ppt) on the desktop and than run the  powerpoint presentation.

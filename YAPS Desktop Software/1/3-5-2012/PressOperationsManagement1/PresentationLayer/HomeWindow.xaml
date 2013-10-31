@@ -1,0 +1,832 @@
+﻿<Window Name="mainWindow" x:Class="PresentationLayer.HomeWindow"
+        
+         
+        xmlns:MyNamespace="clr-namespace:CloseableTabItemDemo;assembly=CloseableTabItemDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+        Title="Yamuna Art and Printers" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" ResizeMode="CanResize" WindowState="Maximized" Height="987" Width="1362" >
+
+    <Window.Resources>
+        
+    </Window.Resources>
+    
+    <Grid Width="1348" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="1072" Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1162*" />
+            <ColumnDefinition Width="7*" />
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/PresentationLayer;component/Images/YAPS1.png" />
+        </Grid.Background>
+        <StackPanel Height="659" HorizontalAlignment="Left" Margin="0,130,0,0" Name="stackPanel1" VerticalAlignment="Top" Width="218">
+            <StackPanel Height="657">
+                <Expander Header="Orders" Name="OrdersExpander" Width="166" FontWeight="Bold" FontFamily="Lucida Fax" FontStyle="Italic" Foreground="#FF3D0475">
+                    <Grid Height="63">
+                        <Label Content="New Order" Cursor="Hand" Height="28" Margin="6,29,74,0" Name="NewOrderslabel" VerticalAlignment="Top" MouseDown="NewOrderslabel_MouseDown" Foreground="#FF4A7C04" />
+                        <Label Content="Existing Orders" Cursor="Hand" Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="ExistingOrderslabel" VerticalAlignment="Top" Width="111" MouseDown="ExistingOrderslabel_MouseDown" Foreground="#FF4A7C04">
+                            <Label.Background>
+                                <SolidColorBrush />
+                            </Label.Background>
+                        </Label>
+                    </Grid>
+                </Expander>
+                <Expander Header="Accounts Settings" Name="AccountSettingsExpander" Width="167" FontFamily="Lucida Fax" FontWeight="Bold" FontStyle="Italic" Foreground="#FF3D0475">
+                    <Grid>
+                        <Label Content="Add Users" Height="28" HorizontalAlignment="Left" Margin="6,5,0,0" Name="AddUserslabel" VerticalAlignment="Top" Width="77" Cursor="Hand" MouseDown="AddUserslabel_MouseDown" Foreground="#FF4A7C04" />
+                        <Label Content="Reset Password" Height="28" HorizontalAlignment="Left" Margin="8,31,0,0" Name="ResetPasswordlabel" VerticalAlignment="Top" Width="107" MouseDown="ResetPasswordlabel_MouseDown" Cursor="Hand" Foreground="#FF4A7C04" />
+                        
+                        <Label Content="Delete User" Height="28" HorizontalAlignment="Left" Margin="8,57,0,0" Name="DeleteUserlabel" VerticalAlignment="Top" Width="89" MouseDown="DeleteUserlabel_MouseDown" Cursor="Hand" Foreground="#FF4A7C04" />
+                    </Grid>
+                </Expander>
+                <Expander Header="Reports" Name="ReportsExpander" Width="165" FontWeight="Bold" FontStyle="Italic" FontFamily="Lucida Fax" Foreground="#FF3D0475">
+                    <Grid Height="61" Width="161">
+                        <Label Content="Monthly Reports" HorizontalAlignment="Left" Margin="7,6,0,27" Name="Report1label" Width="117" MouseDown="Report1label_MouseDown" Cursor="Hand" Foreground="#FF4A7C04" />
+                        <Label Content="Yearly Reports" Height="28" HorizontalAlignment="Left" Margin="7,30,0,0" Name="Report2label" VerticalAlignment="Top" Cursor="Hand" MouseDown="Report2label_MouseDown" Width="103" Foreground="#FF4A7C04" />
+                    </Grid>
+                </Expander>
+                
+                <Expander Header="Database Operations" Name="DatabaseOperationsExpander" Width="166" FontWeight="Bold" FontStyle="Italic" FontFamily="Lucida Fax" Foreground="#FF3D0475">
+                    <Grid Height="67" Width="135">
+                        <Label Content="Backup Database" Height="28" HorizontalAlignment="Left" Margin="7,8,0,0" Name="BackupDatabaselabel" VerticalAlignment="Top" Cursor="Hand" MouseDown="BackupDatabaselabel_MouseDown" Width="122" Foreground="#FF4A7C04" />
+                        <Label Content="Restore Database" Height="28" HorizontalAlignment="Left" Margin="8,35,0,0" Name="RestoreDatabaselabel" VerticalAlignment="Top" Cursor="Hand" MouseDown="RestoreDatabaselabel_MouseDown" Width="124" Foreground="#FF4A7C04" />
+                    </Grid>
+                </Expander>
+                
+                <Expander Header="Payments" Name="PaymentsExpander" Width="164" FontWeight="Bold" FontStyle="Italic" FontFamily="Lucida Fax" Foreground="#FF3D0475" Height="Auto">
+                    <Grid Height="54" Width="148">
+                        <Label Content="Remaining Payments" Height="28" HorizontalAlignment="Left" Margin="6,2,0,0" Name="RemainingPaymentslabel" VerticalAlignment="Top" Width="136" Cursor="Hand" MouseDown="RemainingPaymentslabel_MouseDown" Foreground="#FF4A7C04" />
+                        <Label Content="Apply Payment" HorizontalAlignment="Left" Margin="6,25,0,1" Name="ApplyPaymentlabel" Width="118" Cursor="Hand" MouseDown="ApplyPaymentlabel_MouseDown" Foreground="#FF4A7C04" />
+                    </Grid>
+                </Expander>
+                
+                <Expander Header="Products and Designs" Name="ProductsAndDesignsExpander" Width="165" FontWeight="Bold" FontStyle="Italic" FontFamily="Lucida Fax" Foreground="#FF3D0475" Height="Auto">
+                    <Grid Height="119" Width="125">
+                        <Label Content="View Design" Height="28" HorizontalAlignment="Left" Margin="11,6,0,0" Name="ViewDesignlabel" VerticalAlignment="Top" Width="92" Cursor="Hand" MouseDown="ViewDesignlabel_MouseDown" Foreground="#FF4A7C04" />
+                        <Label Content="New Category" Height="28" HorizontalAlignment="Left" Margin="12,33,0,0" Name="NewCategorylabel" VerticalAlignment="Top" Width="101" Cursor="Hand" MouseDown="NewCategorylabel_MouseDown" Foreground="#FF4A7C04" />
+                        <Label Content="New Product" Height="28" HorizontalAlignment="Left" Margin="11,60,0,0" Name="NewProductlabel" VerticalAlignment="Top" Width="101" Cursor="Hand" MouseDown="NewProductlabel_MouseDown" Foreground="#FF4A7C04" />
+                        <Label Content="New Design" Height="28" HorizontalAlignment="Left" Margin="11,87,0,0" Name="NewDesignlabel" VerticalAlignment="Top" Width="84" Cursor="Hand" MouseDown="NewDesignlabel_MouseDown" Foreground="#FF4A7C04" />
+                        
+                    </Grid>
+                </Expander>               
+            </StackPanel>
+            <StackPanel.Background>
+                <SolidColorBrush />
+            </StackPanel.Background>
+        </StackPanel>
+        <TabControl Height="911" HorizontalAlignment="Stretch"  Margin="224,130,7,0" Name="tabControl1" VerticalAlignment="Top" Background="#00000000" >
+            
+            <MyNamespace:CloseableTabItem Header="New Order" Name="NewOrder" CloseTab="NewOrder_CloseTab" FontWeight="Bold" Background="#00000000">
+
+
+                <!--<ScrollViewer Name="scrollViewer1" CanContentScroll="True" Height="929">-->
+                    <Grid Height="550" Name="grid1" Width="960">
+                        <Label Content="Order Number :" Height="28" HorizontalAlignment="Left" Margin="20,18,0,0" Name="label17" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                        <Label Content="Name" Height="28" HorizontalAlignment="Left" Margin="242,18,0,0" Name="label18" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                        <Label Content="Address" Height="28" HorizontalAlignment="Left" Margin="24,81,0,0" Name="label19" VerticalAlignment="Top" Width="115" FontSize="14" FontWeight="Bold" />
+                        <Label Content="Contact Number" Height="28" HorizontalAlignment="Left" Margin="653,20,0,0" Name="label20" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,23,41,0" Name="textBox4" VerticalAlignment="Top" Width="147" TabIndex="2" LostKeyboardFocus="textBox4_LostKeyboardFocus" />
+                        <Label Content="Design Code" Height="28" HorizontalAlignment="Left" Margin="412,90,0,0" Name="label21" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,92,309,0" Name="textBox5" VerticalAlignment="Top" Width="120" TabIndex="4" LostKeyboardFocus="textBox5_LostKeyboardFocus" />
+                        <Label Content="Quantity" Height="28" HorizontalAlignment="Left" Margin="24,262,0,0" Name="label24" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="122,267,0,0" Name="textBox8" VerticalAlignment="Top" Width="120" TabIndex="10" LostFocus="textBox8_LostFocus" />
+                        <Label Content="Paper Type" Height="28" HorizontalAlignment="Left" Margin="20,186,0,0" Name="label25" VerticalAlignment="Top" Width="87" FontSize="14" FontWeight="Bold" />
+                    <Label Content="Size" Height="28" HorizontalAlignment="Left" Margin="318,190,0,0" Name="label26" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="374,193,0,0" Name="textBox10" VerticalAlignment="Top" Width="56" TabIndex="7" LostKeyboardFocus="textBox10_LostKeyboardFocus" />
+                    <Label Content="Design to be printed" Height="28" HorizontalAlignment="Left" Margin="280,264,0,0" Name="label28" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                        <Label Content="Delivery Date" Height="28" HorizontalAlignment="Left" Margin="282,330,0,0" Name="label29" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                        <Label Content="Per Unit Cost" Height="28" HorizontalAlignment="Left" Margin="590,336,0,0" Name="label30" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="701,337,0,0" Name="textBox14" VerticalAlignment="Top" Width="120" FontSize="14" FontWeight="Normal" TabIndex="13" LostFocus="textBox14_LostFocus" />
+                        <Label Content="Advanced payment" Height="28" HorizontalAlignment="Left" Margin="276,409,0,0" Name="label31" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="422,414,0,0" Name="textBox15" VerticalAlignment="Top" Width="120" FontSize="14" FontWeight="Normal" TabIndex="14" LostFocus="textBox15_LostFocus" />
+                        <Button Content="Save" Height="38" HorizontalAlignment="Left" Margin="306,488,0,0" Name="button3" VerticalAlignment="Top" Width="84" Click="button3_Click" >
+                        	<Button.Background>
+                        		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        			<GradientStop Color="#FFE57D7D" Offset="0.25"/>
+                        			<GradientStop Color="#FFDDDDDD" Offset="0.103"/>
+                        			<GradientStop Color="#FFCDCDCD" Offset="1"/>
+                        		</LinearGradientBrush>
+                        	</Button.Background>
+                        </Button>
+                        <Button Content="Reset" Height="38" HorizontalAlignment="Right" Margin="0,489,397,0" Name="button4" VerticalAlignment="Top" Width="89" Click="button4_Click" >
+                        	<Button.Background>
+                        		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        			<GradientStop Color="#FFF18686" Offset="0.211"/>
+                        			<GradientStop Color="#FFDDDDDD" Offset="0.151"/>
+                        			<GradientStop Color="#FFCDCDCD" Offset="1"/>
+                        		</LinearGradientBrush>
+                        	</Button.Background>
+                        </Button>
+                        <TextBox Height="25" HorizontalAlignment="Left" Margin="316,21,0,0" Name="textBox2" VerticalAlignment="Top" Width="317" TextWrapping="Wrap" Background="White" TabIndex="1" LostKeyboardFocus="textBox2_LostKeyboardFocus" />
+                    <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="131,18,0,0" Name="label35" VerticalAlignment="Top" Width="82" FontSize="14" />
+                        <DatePicker Height="25" HorizontalAlignment="Left" Margin="421,334,0,0" Name="datePicker1" VerticalAlignment="Top" Width="115" TabIndex="12" />
+                        <TextBox Height="72" HorizontalAlignment="Left" Margin="133,66,0,0" Name="txtadd" VerticalAlignment="Top" Width="211" TextWrapping="Wrap" TabIndex="3" />
+                        <Label Content="" Height="32" HorizontalAlignment="Left" Margin="607,409,0,0" Name="label22" VerticalAlignment="Top" Width="214" FontSize="18" FontWeight="Bold" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="427,269,0,0" Name="textBox3" VerticalAlignment="Top" Width="120" />
+                        <Button Content="Browse" Height="23" HorizontalAlignment="Left" Margin="569,269,0,0" Name="button10" VerticalAlignment="Top" Width="75" Click="button10_Click" TabIndex="11" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="146,191,0,0" Name="comboBox3" VerticalAlignment="Top" Width="120" TabIndex="5" ItemsSource="{Binding}" DisplayMemberPath="PaperTypeName"/>
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,193,435,0" Name="textBox7" VerticalAlignment="Top" Width="56" TabIndex="8" LostKeyboardFocus="textBox7_LostKeyboardFocus" />
+                    <Label Content="X" Height="28" HorizontalAlignment="Left" Margin="439,191,0,0" Name="label12" VerticalAlignment="Top" FontWeight="Bold" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="543,193,0,0" Name="comboBox4" VerticalAlignment="Top" Width="123" FontWeight="Bold" TabIndex="9">
+                        <ComboBoxItem Content="Centimeters" FontWeight="Bold" />
+                        <ComboBoxItem Content="Inches" FontWeight="Bold" />
+                        <ComboBoxItem Content="Feet" FontWeight="Bold" />
+                        <ComboBoxItem Content="Meters" FontWeight="Bold" />
+                        <ComboBoxItem />
+                    </ComboBox>
+                    <Label Content="Design Name" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="679,90,0,0" Name="label53" VerticalAlignment="Top" />
+                    <Label FontSize="14" FontWeight="Normal" Height="28" HorizontalAlignment="Left" Margin="778,90,0,0" Name="label54" VerticalAlignment="Top" Width="176" />
+                    <ListBox HorizontalAlignment="Left" Margin="317,45,0,353" Name="listBox1" Width="316" Visibility="Collapsed" SelectionChanged="listBox1_SelectionChanged" SelectedIndex="-1"/>
+                </Grid>
+                <!--</ScrollViewer>-->
+            </MyNamespace:CloseableTabItem>
+            <MyNamespace:CloseableTabItem Header="Existing Orders" Name="ExistingOrders" CloseTab="ExistingOrders_CloseTab" FontWeight="Bold" Foreground="Black" >
+                <Grid Height="858" Name="gridddd" Width="1068">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.017*" />
+                        <ColumnDefinition Width="0.144*" />
+                        <ColumnDefinition Width="0.03*"/>
+                        <ColumnDefinition Width="0.015*"/>
+                        <ColumnDefinition Width="0.794*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid ItemsSource="{Binding OrderDetails}" AutoGenerateColumns="False" Name="dataGrid1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" CanUserAddRows="False" Margin="19,56,0,302" Grid.Column="1" VerticalGridLinesBrush="#FF74AB18" Grid.ColumnSpan="4" Foreground="Black" HorizontalGridLinesBrush="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderThickness="10,10,10,1" BorderBrush="#FFD42E2E">
+                    	<DataGrid.Background>
+                    		<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    			<GradientStop Color="#FF85BEB6" Offset="0.272"/>
+                    			<GradientStop Color="#FF83FFF7" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</DataGrid.Background>
+                        
+                    	<DataGrid.RowBackground>
+                    		<ImageBrush/>
+                    	</DataGrid.RowBackground>
+                    	<DataGrid.AlternatingRowBackground>
+                    		<ImageBrush/>
+                    	</DataGrid.AlternatingRowBackground>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn FontSize="14" FontWeight="Bold" Header="Order ID" MaxWidth="Infinity" Width="100" Binding="{Binding OrderID}" IsReadOnly="True" CanUserSort="False" />
+                            <DataGridTextColumn FontSize="14" FontWeight="Bold" Header="Customer Name" Width="180" Binding="{Binding CustomerName}" IsReadOnly="True" CanUserSort="False" />
+                            <DataGridTextColumn FontSize="14" FontWeight="Bold" Header="Contact Number" Width="180" Binding="{Binding CustomerContactNumber}" IsReadOnly="True" CanUserSort="False" />
+                            <DataGridTextColumn FontSize="14" FontWeight="Bold" Header="Delivery Date" Width="130" Binding="{Binding DeliveryDate, StringFormat=\{0:dd-M-yyyy\}}" IsReadOnly="True" CanUserSort="False" />
+                            <DataGridTextColumn FontSize="14" FontWeight="Bold" Header="Category" Width="130" Binding="{Binding CategoryName}" IsReadOnly="True" CanUserSort="False"/>
+                            <DataGridTextColumn FontSize="14" FontWeight="Bold" Header="Order Status" Width="130" Binding="{Binding OrderStatusName}" IsReadOnly="True" CanUserSort="False" />
+                            <DataGridTemplateColumn Header="Description">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <Hyperlink Click="Description_Click">
+                                                Click Here
+                                            </Hyperlink>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Delete Order" >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Image Source="/PresentationLayer;component/Images/delete.jpg" Width="20" Height="20" Name="deleteImage" MouseLeftButtonUp="deleteImage_MouseLeftButtonUp" />
+                                            <!--<CheckBox Name="delchkbox" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />-->
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Label Content="Seach Design by" FontSize="18" Height="39" Margin="34,13,660,0" Name="label76" VerticalAlignment="Top" Grid.Column="4" />
+                    <TextBox FontSize="14" Height="31" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="322,17,0,0" Name="textBox9" TabIndex="4" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="133" Grid.Column="4" d:LayoutOverrides="HorizontalAlignment" />
+                    <ComboBox FontSize="14" Height="37" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="189,14,0,0" Name="comboBox14" SelectedIndex="0" TabIndex="3" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="127" Grid.Column="4" MouseLeave="comboBox14_MouseLeave" SelectionChanged="comboBox14_SelectionChanged">
+                        <ComboBoxItem Content="ID" />
+                        <ComboBoxItem Content="Name" />
+                        <ComboBoxItem Content="Delivery Date" />
+                    </ComboBox>
+                    <Button Content="Go" FontSize="18" Height="34" HorizontalAlignment="Left" Margin="461,15,0,0" Name="button25" TabIndex="5" VerticalAlignment="Top" Width="43" Grid.Column="4" Click="button25_Click" IsDefault="True">
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFEBEBEB" Offset="0.272"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.134"/>
+                    			<GradientStop Color="#FFE99797" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                    <DatePicker Grid.Column="4" Height="32" HorizontalAlignment="Left" Margin="321,17,0,0" Name="datePicker3" VerticalAlignment="Top" Width="134" Visibility="Hidden" FontSize="16" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment" />
+                    <Label Content="Label" FontSize="18" FontWeight="Bold" Foreground="Red" Height="44" HorizontalContentAlignment="Center" Margin="514,8,18,806" Name="label79" VerticalContentAlignment="Center" Visibility="Hidden" Grid.Column="4" />
+                    <Label Content="Show Complete List" FontSize="18" Grid.ColumnSpan="3" Height="39" Margin="8,13,15,0" Name="label83" VerticalAlignment="Top" Grid.Column="1" Cursor="Hand" MouseUp="label83_MouseUp" />
+                </Grid>
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+            </MyNamespace:CloseableTabItem>
+
+            <MyNamespace:CloseableTabItem Header="Description" Name="description" CloseTab="Description_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid Height="816" Name="grid2" Width="1082">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="632*" />
+                        <ColumnDefinition Width="450*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Order Number" Height="28" HorizontalAlignment="Left" Margin="95,14,0,0" Name="label57" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                    <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="211,15,0,0" Name="label58" VerticalAlignment="Top" FontSize="14" FontWeight="Normal" />
+                    <Label Content="Name" Height="28" HorizontalAlignment="Left" Margin="364,16,0,0" Name="label59" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                    <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="444,18,0,0" Name="label60" VerticalAlignment="Top" FontSize="14" Width="201" Grid.ColumnSpan="2" FontWeight="Normal" />
+                    <Label Content="Contact Number" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="119,16,0,0" Name="label61" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Address" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="100,98,0,0" Name="label62" VerticalAlignment="Top" Width="115" />
+                    <Label Content="Label" Height="96" HorizontalAlignment="Left" Margin="183,96,0,0" Name="label63" VerticalAlignment="Top" Width="185" FontWeight="Normal" FontSize="14" />
+                    <Label Content="Design Code" Height="28" HorizontalAlignment="Left" Margin="362,98,0,0" Name="label64" VerticalAlignment="Top" FontSize="14" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,100,16,0" Name="textBox11" TabIndex="2" VerticalAlignment="Top" Width="147" LostKeyboardFocus="textBox11_LostKeyboardFocus" TextChanged="textBox11_TextChanged" />
+                    <Label Content="Design Name" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="110,96,0,0" Name="label65" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label FontSize="14" FontWeight="Normal" Height="28" HorizontalAlignment="Left" Margin="209,96,0,0" Name="label66" VerticalAlignment="Top" Width="218" Content="label" Grid.Column="1" />
+                    <Label Content="Quantity" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="106,302,0,0" Name="label67" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="204,306,0,0" Name="textBox12" TabIndex="10" VerticalAlignment="Top" Width="120" LostKeyboardFocus="textBox12_LostKeyboardFocus" FontWeight="Normal" />
+                    <Label Content="Paper Type" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="102,226,0,0" Name="label68" VerticalAlignment="Top" Width="87" />
+                    <Label Content="Size" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="362,229,0,0" Name="label69" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="418,231,0,0" Name="textBox16" TabIndex="7" VerticalAlignment="Top" Width="56" TextChanged="textBox16_TextChanged" />
+                    <Label Content="Design to be printed" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="362,304,0,0" Name="label70" VerticalAlignment="Top" />
+                    <Label Content="Click Here" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="525,304,0,0" Name="label170" VerticalAlignment="Top" MouseUp="label70_Click" Cursor="Hand" ToolTip="Click here to open design file"/>
+                    <Label Content="Delivery Date" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="364,370,0,0" Name="label71" VerticalAlignment="Top" />
+                    <Label Content="Per Unit Cost" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="119,371,0,0" Name="label72" VerticalAlignment="Top" Grid.Column="1" />
+                    <TextBox FontSize="14" FontWeight="Normal" Height="23" HorizontalAlignment="Left" Margin="230,373,0,0" Name="textBox20" TabIndex="13" VerticalAlignment="Top" Width="120" Grid.Column="1" LostKeyboardFocus="textBox20_LostKeyboardFocus" />
+                    <Label Content="Advanced payment" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="362,448,0,0" Name="label73" VerticalAlignment="Top" />
+                    <TextBox FontSize="14" FontWeight="Normal" Height="23" HorizontalAlignment="Left" Margin="508,454,0,0" Name="textBox21" TabIndex="14" VerticalAlignment="Top" Width="120" LostKeyboardFocus="textBox21_LostKeyboardFocus" />
+                    <Button Content="Save" Height="38" HorizontalAlignment="Left" Margin="513,519,0,0" Name="button24" VerticalAlignment="Top" Width="84" IsEnabled="True" Click="button24_Click" />
+                    <DatePicker Height="25" HorizontalAlignment="Left" Margin="503,374,0,0" Name="datePicker2" TabIndex="12" VerticalAlignment="Top" Width="115" />
+                    <Label Content="Label" FontSize="18" FontWeight="Bold" Height="32" HorizontalAlignment="Left" Margin="119,448,0,0" Name="label74" VerticalAlignment="Top" Width="214" Grid.Column="1" />
+                    <Button Content="Browse" Height="23" HorizontalAlignment="Left" Margin="19,308,0,0" Name="button26" TabIndex="11" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="button26_Click" />
+                    <ComboBox DisplayMemberPath="PaperTypeName" Height="23" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="204,232,0,0" Name="comboBox11" TabIndex="5" VerticalAlignment="Top" Width="120" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,231,63,0" Name="textBox23" TabIndex="8" VerticalAlignment="Top" Width="56" TextChanged="textBox23_TextChanged" />
+                    <Label Content="X" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="483,229,0,0" Name="label75" VerticalAlignment="Top" />
+                    <ComboBox FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="587,231,0,0" Name="comboBox12" TabIndex="9" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2">
+                        <ComboBoxItem Content="Centimeters" FontWeight="Bold" />
+                        <ComboBoxItem Content="Inches" FontWeight="Bold" />
+                        <ComboBoxItem Content="Feet" FontWeight="Bold" />
+                        <ComboBoxItem Content="Meters" FontWeight="Bold" />
+                        <ComboBoxItem />
+                    </ComboBox>
+                    <Label Content="Order Status" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="119,229,0,0" Name="label77" VerticalAlignment="Top" Grid.Column="1" />
+                    <ComboBox FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="229,232,0,0" Name="comboBox13" TabIndex="9" VerticalAlignment="Top" Width="123" ItemsSource="{Binding}" DisplayMemberPath="OrderStatusName" Grid.Column="1" />
+                    <Label Content="Label" FontSize="14" Height="28" HorizontalAlignment="Left" Margin="246,16,0,0" Name="label78" VerticalAlignment="Top" Width="200" Grid.Column="1" FontWeight="Normal" />
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+            
+            
+            <MyNamespace:CloseableTabItem Header="Add User" Name="AddUsers" CloseTab="AddUsers_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid>
+                    <Label Content="Employee Name" Height="28" HorizontalAlignment="Left" Margin="291,66,0,0" Name="label1" VerticalAlignment="Top" Width="119" FontSize="14" FontWeight="Bold" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="426,71,0,0" Name="textBox1" VerticalAlignment="Top" Width="255" LostFocus="textBox1_LostFocus" TabIndex="1" />
+                    <ComboBox ItemsSource="{Binding}" DisplayMemberPath="DesignationName" Height="23" HorizontalAlignment="Right" Margin="0,128,505,0" Name="comboBox1" VerticalAlignment="Top" Width="166" TabIndex="2" />
+                    <Label Content="User name" Height="28" HorizontalAlignment="Left" Margin="291,180,0,0" Name="label2" VerticalAlignment="Top" Width="93" FontSize="14" FontWeight="Bold" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="429,185,0,0" Name="textBox13" VerticalAlignment="Top" Width="165" TabIndex="3" LostFocus="textBox13_LostFocus" />
+                    <Label Content="Password" Height="28" HorizontalAlignment="Left" Margin="291,244,0,0" Name="label3" VerticalAlignment="Top" Width="82" FontSize="14" FontWeight="Bold" />
+                    <PasswordBox Height="28" Name="password" Margin="429,244,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Visibility="Visible" FontSize="16" TabIndex="4" LostFocus="password_LostFocus" />
+                    <Label Content="Designation" Height="28" HorizontalAlignment="Left" Margin="291,124,0,0" Name="label4" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                    <Button Content="SUBMIT" Height="34" HorizontalAlignment="Left" Margin="370,322,0,0" Name="button5" VerticalAlignment="Top" Width="89" TabIndex="5" Click="button5_Click" >
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFEBEBEB" Offset="0.19"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.129"/>
+                    			<GradientStop Color="#FFE97C7C" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                    <Button Content="RESET" Height="34" HorizontalAlignment="Left" Margin="564,323,0,0" Name="button6" VerticalAlignment="Top" Width="89" TabIndex="6" Click="button6_Click" >
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFE08787" Offset="0.151"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.112"/>
+                    			<GradientStop Color="#FFCDCDCD" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+            
+            
+            
+            <MyNamespace:CloseableTabItem Header="Reset Password" Name="ResetPassword" CloseTab="ResetPassword_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid>
+                    <Label Content="User Name" Height="44" HorizontalAlignment="Left" Margin="298,107,0,0" Name="label5" VerticalAlignment="Top" Width="146" FontSize="14" FontWeight="Bold" />
+                    <ComboBox ItemsSource="{Binding}" DisplayMemberPath="UserName" Height="35" HorizontalAlignment="Right" Margin="0,106,568,0" Name="comboBox2" VerticalAlignment="Top" Width="142" />
+                    <Button Content="Reset Password" Height="45" HorizontalAlignment="Left" Margin="365,226,0,0" Name="button7" VerticalAlignment="Top" Width="122" FontSize="16" Click="button7_Click" >
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFEBEBEB" Offset="0.172"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.099"/>
+                    			<GradientStop Color="#FFE77E7E" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+
+
+            
+
+
+            <MyNamespace:CloseableTabItem Header="Delete User" Name="DeleteUsers" CloseTab="DeleteUsers_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid>
+                    <Label Content="User Name" FontSize="14" Height="44" HorizontalAlignment="Left" Margin="254,93,0,0" Name="label6" VerticalAlignment="Top" Width="146" FontWeight="Bold" />
+                    <Button Content="DELETE USER" FontSize="16" Height="45" HorizontalAlignment="Left" Margin="407,172,0,0" Name="button8" VerticalAlignment="Top" Width="122" Click="button8_Click" >
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFEBEBEB" Offset="0.203"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.125"/>
+                    			<GradientStop Color="#FFED8A8A" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                    <ComboBox ItemsSource="{Binding}" DisplayMemberPath="UserName" Height="30" HorizontalAlignment="Left" Margin="352,94,0,0" Name="comboBox6" VerticalAlignment="Top" Width="150" />
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+
+
+            <MyNamespace:CloseableTabItem Header="Monthly Reports" Name="Report1" CloseTab="Report1_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid Name="MonthlyReportGrid">
+                    <Label Content="Select Year" Height="39" HorizontalAlignment="Left" Margin="7,132,0,0" Name="selectYrLabelR" VerticalAlignment="Top" Width="145" FontSize="18" />
+                    <ComboBox Height="34" HorizontalAlignment="Left"  Name="selectYrComboR" VerticalAlignment="Top" Width="168" Margin="147,132,0,0" FontSize="16" SelectedIndex="-1" TabIndex="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                        <ComboBoxItem Content="2012" />
+                        <ComboBoxItem Content="2013" />
+                        <ComboBoxItem Content="2014" />
+                        <ComboBoxItem Content="2015" />
+                        <ComboBoxItem Content="2016" />
+                        <ComboBoxItem Content="2017" />
+                        <ComboBoxItem Content="2018" />
+                        <ComboBoxItem Content="2019" />
+                        <ComboBoxItem Content="2020" />
+                        <ComboBoxItem Content="2021" />
+                    </ComboBox>
+                    <Label Content="Select Month" FontSize="18" Height="39" HorizontalAlignment="Left" Margin="6,198,0,0" Name="selectMonLabelR" VerticalAlignment="Top" Width="136" />
+                    <ComboBox Height="34" HorizontalAlignment="Left"  Name="selectMonComboR" VerticalAlignment="Top" Width="168" Margin="147,198,0,0" FontSize="18" DropDownClosed="comboBox21_DropDownClosed" TabIndex="2" SelectionChanged="selectMonComboR_SelectionChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        <ComboBoxItem Content="January" />
+                        <ComboBoxItem Content="February" />
+                        <ComboBoxItem Content="March" />
+                        <ComboBoxItem Content="April" />
+                        <ComboBoxItem Content="May" />
+                        <ComboBoxItem Content="June" />
+                        <ComboBoxItem Content="July" />
+                        <ComboBoxItem Content="August" />
+                        <ComboBoxItem Content="September" />
+                        <ComboBoxItem Content="October" />
+                        <ComboBoxItem Content="November" />
+                        <ComboBoxItem Content="December" DataContext="{Binding}" />
+                    </ComboBox>
+                    <my:CrystalReportsViewer HorizontalAlignment="Right" Name="documentViewer" VerticalAlignment="Top" Height="564" Width="773" Margin="0,6,4,0" ToggleSidePanel="Restore" />
+                    <Label Content="Year Not Selected" Height="38" HorizontalAlignment="Left" Margin="68,285,0,0" Name="label36" VerticalAlignment="Top" Width="202" FontSize="22" Foreground="Red" Visibility="Hidden" />
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+
+            <MyNamespace:CloseableTabItem Header="Yearly Reports" Name="Report2" CloseTab="Report2_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid Name="YearlyReportGrid">
+                    <Label Content="Select Year" Height="39" HorizontalAlignment="Left" Margin="7,158,0,0" Name="selectYrLabelR2" VerticalAlignment="Top" Width="145" FontSize="18" />
+                    <ComboBox Height="34" HorizontalAlignment="Left"  Name="selectYrComboR2" VerticalAlignment="Top" Width="168" Margin="125,158,0,0" FontSize="16" SelectedIndex="-1" TabIndex="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MouseLeave="selectYrComboR2_MouseLeave">
+                        <ComboBoxItem Content="2012" />
+                        <ComboBoxItem Content="2013" />
+                        <ComboBoxItem Content="2014" />
+                        <ComboBoxItem Content="2015" />
+                        <ComboBoxItem Content="2016" />
+                        <ComboBoxItem Content="2017" />
+                        <ComboBoxItem Content="2018" />
+                        <ComboBoxItem Content="2019" />
+                        <ComboBoxItem Content="2020" />
+                        <ComboBoxItem Content="2021" />
+                    </ComboBox>
+                    <my:CrystalReportsViewer HorizontalAlignment="Right" Name="documentViewerY" VerticalAlignment="Top" Height="564" Width="773" Margin="0,6,4,0" ToggleSidePanel="None" />
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+
+            <MyNamespace:CloseableTabItem Header="Backup Database" Name="BackupDatabase" CloseTab="BackupDatabase_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.221*" />
+                        <ColumnDefinition Width="0.692*"/>
+                        <ColumnDefinition Width="0.087*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Height="28" HorizontalAlignment="Left" Margin="-29,92,0,0" Name="label7" VerticalAlignment="Top" Width="86" Content="Select Path " FontSize="14" FontWeight="Bold" Grid.Column="1" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="79,92,0,0" Name="textBox17" VerticalAlignment="Top" Width="157" Grid.Column="1" />
+                    <Button Content="Browse" Height="27" HorizontalAlignment="Left" Margin="255,93,0,0" Name="button9" VerticalAlignment="Top" Width="96" Click="button9_Click" Grid.Column="1" d:LayoutOverrides="HorizontalAlignment" />
+                    <Button Content="BACKUP" Height="37" HorizontalAlignment="Left" Margin="42,187,0,0" Name="button11" VerticalAlignment="Top" Width="92" Click="button11_Click" Grid.Column="1" >
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFEBEBEB" Offset="0.22"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.203"/>
+                    			<GradientStop Color="#FFF39999" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                    <Button Content="CANCEL" Height="39" Margin="208,187,0,0" Name="button12" VerticalAlignment="Top" Click="button12_Click" Grid.Column="1" HorizontalAlignment="Left" Width="76.319" >
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFED8686" Offset="0.5"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.134"/>
+                    			<GradientStop Color="#FFCDCDCD" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                    <Label Content="Connected Database server is not on this machine" FontSize="18" FontWeight="Bold" Foreground="Red" Grid.ColumnSpan="2" Height="44" HorizontalContentAlignment="Center" Margin="148,270,343,545" Name="label84" VerticalContentAlignment="Center" Visibility="Hidden" />
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+
+            <MyNamespace:CloseableTabItem Header="Restore Databse" Name="RestoreDatabase" CloseTab="RestoreDatabase_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid>
+                	<Grid.ColumnDefinitions>
+                		<ColumnDefinition Width="0.345*"/>
+                		<ColumnDefinition Width="0.655*"/>
+                	</Grid.ColumnDefinitions>
+                    <Label Content="Select Database" Height="34" HorizontalAlignment="Right" Margin="0,60,44,0" Name="label8" VerticalAlignment="Top" Width="118" FontSize="14" FontWeight="Bold" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="-35,64,0,0" Name="textBox18" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <Button Content="Browse" Height="23" HorizontalAlignment="Left" Margin="102,64,0,0" Name="button13" VerticalAlignment="Top" Width="75" Click="button13_Click" Grid.Column="1" d:LayoutOverrides="HorizontalAlignment" />
+                    <Button Content="RESTORE" Height="39" HorizontalAlignment="Right" Margin="0,161,26,0" Name="button14" VerticalAlignment="Top" Width="109" Click="button14_Click" >
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFEBEBEB" Offset="0.237"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.159"/>
+                    			<GradientStop Color="#FFED8E8E" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                    <Button Content="CANCEL" Height="39" HorizontalAlignment="Left" Margin="58,161,0,0" Name="button15" VerticalAlignment="Top" Width="109" Click="button15_Click" Grid.Column="1" >
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFE58585" Offset="0.19"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.121"/>
+                    			<GradientStop Color="#FFCDCDCD" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+
+            <MyNamespace:CloseableTabItem Header="New Category" Name="NewCategory" CloseTab="NewCategory_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid>
+                    <Label Content="Category Name" Height="28" HorizontalAlignment="Left" Margin="271,122,0,0" Name="label9" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="417,124,0,0" Name="textBox19" VerticalAlignment="Top" Width="141" />
+                    <Button Content="SAVE" Height="35" HorizontalAlignment="Left" Margin="325,261,0,0" Name="button16" VerticalAlignment="Top" Width="87" Click="button16_Click" >
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFEBEBEB" Offset="0.211"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.159"/>
+                    			<GradientStop Color="#FFE07C7C" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                    <Button Content="CANCEL" Height="35" HorizontalAlignment="Left" Margin="509,261,0,0" Name="button17" VerticalAlignment="Top" Width="87" Click="button17_Click" >
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFE28181" Offset="0.241"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.095"/>
+                    			<GradientStop Color="#FFCDCDCD" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+
+            <MyNamespace:CloseableTabItem Header="New Product" Name="NewProduct" CloseTab="NewProduct_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid>
+                    <Label Content="Select Category " Height="32" HorizontalAlignment="Left" Margin="309,74,0,0" Name="label15" VerticalAlignment="Top" Width="115" FontSize="14" FontWeight="Bold" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="468,79,0,0" Name="comboBox5" VerticalAlignment="Top" Width="144" ItemsSource="{Binding}" DisplayMemberPath="CategoryName"/>
+                    <Label Content="Product Name" Height="28" HorizontalAlignment="Left" Margin="309,156,0,0" Name="label32" VerticalAlignment="Top" Width="115" FontSize="14" FontWeight="Bold" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="468,158,0,0" Name="textBox25" VerticalAlignment="Top" Width="144" />
+                    <Button Content="SAVE" Height="35" HorizontalAlignment="Left" Margin="315,223,0,0" Name="button19" VerticalAlignment="Top" Width="87" Click="button19_Click" >
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFEBEBEB" Offset="0.22"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.198"/>
+                    			<GradientStop Color="#FFE77979" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                    <Button Content="CANCEL" Height="35" HorizontalAlignment="Left" Margin="538,224,0,0" Name="button20" VerticalAlignment="Top" Width="87" >
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFE28787" Offset="0.177"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.013"/>
+                    			<GradientStop Color="#FFCDCDCD" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                    <Label Content="Add Category" Height="28" HorizontalAlignment="Left" Margin="670,77,0,0" Name="label82" VerticalAlignment="Top" MouseUp="label82_MouseUp" />
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+
+
+            <MyNamespace:CloseableTabItem Header="New Design" Name="NewDesign" CloseTab="NewDesign_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid Name="NewDesignGrid" Width="1115" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto">
+
+
+                    <ComboBox Height="34" HorizontalAlignment="Left"  Name="comboBox8" VerticalAlignment="Top" Width="168" ItemsSource="{Binding}" DisplayMemberPath="CategoryName" IsSynchronizedWithCurrentItem="True" Margin="235,10,0,0" FontSize="18" />
+                    <ComboBox Height="34" HorizontalAlignment="Left"  Name="comboBox9" VerticalAlignment="Top" Width="220" ItemsSource="{Binding Path=FK_Product_Product}"   DisplayMemberPath="ProductName" Margin="713,10,0,0" SelectionChanged="comboBox9_SelectionChanged" FontSize="18" />
+                    <Label Content="Select Category" Height="39" HorizontalAlignment="Left" Margin="65,10,0,0" Name="label48" VerticalAlignment="Top" Width="144" FontSize="18" />
+                    <Label Content="Select Product" FontSize="18" Height="39" HorizontalAlignment="Left" Margin="514,12,0,0" Name="label49" VerticalAlignment="Top" Width="136" />
+                    <Button Content="Add Design" Height="29" HorizontalAlignment="Left" Margin="360,56,0,0" Name="addDesignButton" VerticalAlignment="Top" Width="86" Visibility="Hidden" Click="addDesignButton_Click">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                <GradientStop Color="Black" Offset="0" />
+                                <GradientStop Color="#FFD86C6C" Offset="0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Grid Height="Auto" HorizontalAlignment="Left" Name="grid3" VerticalAlignment="Top" Width="1004" Visibility="Hidden" Margin="6,95,0,0">
+                        <ListBox Name="ListViewDesign" ItemsSource="{Binding}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="-19,1,-98,0">
+                            <ListBox.Background>
+                                <SolidColorBrush />
+                            </ListBox.Background>
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Horizontal"  />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+
+
+                                    <WrapPanel Height="320">
+                                        <Image Name="image1" Width="400" Height="400" Source="{Binding DesignFilePath}" />
+                                        <Label Name="lbl" Content="Name" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        <TextBox Name="designname" Height="25" Width="130"  Text="{Binding DesignName,Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+                                        <Label Name="lbl2" Content="Size" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        <TextBox Name="designsize" Height="25" Width="130" Text="{Binding DesignSize,Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" LostKeyboardFocus="designsize_LostKeyboardFocus"></TextBox>
+                                        <Label Name="lbl3" Content="Paper Type" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        <ComboBox Name="PaperTypeComboBox" Height="25" Width="100" Text="{Binding DesignPaperType,Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <ComboBoxItem Content="Glossy" />
+                                            <ComboBoxItem Content="Semi Glossy" />
+                                            <ComboBoxItem Content="White Paper" />
+                                            <ComboBoxItem Content="Butter" />
+                                        </ComboBox>
+                                    </WrapPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+
+
+                        </ListBox>
+                    </Grid>
+                    <Button Content="Save" Height="29" HorizontalAlignment="Left" Margin="488,56,0,0" Name="savebutton" VerticalAlignment="Top" Width="93" Visibility="Hidden" Click="savebutton_Click" />
+                    <Label Content="Add Product" Height="28" HorizontalAlignment="Left" Margin="977,14,0,0" Name="label80" VerticalAlignment="Top" Width="116" MouseUp="label80_MouseUp" />
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+
+            <MyNamespace:CloseableTabItem Header="View Designs" Name="ViewDesign" CloseTab="ViewDesign_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid Name="ViewDesignGrid" Width="1115" VerticalAlignment="Top" HorizontalAlignment="Center" Height="Auto">
+                	<Grid.ColumnDefinitions>
+                		<ColumnDefinition Width="0.842*"/>
+                		<ColumnDefinition Width="0.158*"/>
+                	</Grid.ColumnDefinitions>
+
+
+                    <ComboBox Height="34" HorizontalAlignment="Left"  Name="comboBox20" VerticalAlignment="Top" Width="168" ItemsSource="{Binding}" DisplayMemberPath="CategoryName" IsSynchronizedWithCurrentItem="True" Margin="161,10,0,0" FontSize="18" SelectedIndex="0" TabIndex="1" />
+                    <ComboBox Height="34" HorizontalAlignment="Left"  Name="comboBox21" VerticalAlignment="Top" Width="168" ItemsSource="{Binding Path=FK_Product_Product}"   DisplayMemberPath="ProductName" Margin="490,11,0,0" FontSize="18" DropDownClosed="comboBox21_DropDownClosed" TabIndex="2" />
+                    <Label Content="Select Category" Height="39" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label55" VerticalAlignment="Top" Width="164" FontSize="18" />
+                    <Label Content="Select Product" FontSize="18" Height="39" Margin="347,10,456.036,0" Name="label56" VerticalAlignment="Top" />
+
+                    <Grid Height="Auto" HorizontalAlignment="Left" Name="grid4" VerticalAlignment="Top" Width="1004" Visibility="Hidden" Margin="6,95,0,0">
+                        <ListBox Name="viewDesignList" ItemsSource="{Binding}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="-19,1,-99,-7">
+                            <ListBox.Background>
+                                <SolidColorBrush />
+                            </ListBox.Background>
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Horizontal"  />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+
+
+                                    <WrapPanel>
+                                        <Image Name="image1" Width="150" Height="150" Source="{Binding DesignFile}" MouseLeftButtonUp="image1_MouseLeftButtonUp"/>
+                                        <Label Name="lbl4" Content="Design ID" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        <Label Name="designID" Height="25" Width="60" Content="{Binding DesignID,Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></Label>
+                                        <Label Name="lbl" Content="Name" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        <TextBox Name="designname" Height="25" Width="150"  Text="{Binding DesignName,Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+                                        <Label Name="lbl2" Content="Size" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        <TextBox Name="designsize" Height="25" Width="130" Text="{Binding DesignSize,Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" LostKeyboardFocus="designsize_LostKeyboardFocus_1"></TextBox>
+                                        <Label Name="lbl3" Content="Paper Type" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        <ComboBox Name="PaperTypeComboBox" Height="25" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" DisplayMemberPath="{Binding PaperTypeName}" SelectedIndex="0">
+                                            <ComboBoxItem Content="Glossy" />
+                                            <ComboBoxItem Content="Semi Glossy" />
+                                            <ComboBoxItem Content="White Paper" />
+                                            <ComboBoxItem Content="Butter" />
+                                        </ComboBox>
+                                        <Label Name="Space" Content="    "></Label>
+                                        <Button Name="btnsave" Content="Save" Height="25" Width="40" Click="btnsave_Click" />
+                                    </WrapPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+
+
+                        </ListBox>
+                    </Grid>
+                    <Label Content="Seach Design by" FontSize="18" Height="39" HorizontalAlignment="Left" Margin="700,12,0,0" Name="label16" VerticalAlignment="Top" Width="177" />
+                    <TextBox Height="31" HorizontalAlignment="Left" Margin="-18.036,16,0,0" Name="textBox6" VerticalAlignment="Top" Width="133" TabIndex="4" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" />
+                    <ComboBox Height="37" HorizontalAlignment="Left" Margin="850,13,0,0" Name="comboBox10" VerticalAlignment="Top" Width="65" SelectedIndex="0" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="3">
+                        <ComboBoxItem Content="ID" />
+                        <ComboBoxItem Content="Name" />
+                    </ComboBox>
+                    <Button Content="Go" Height="34" HorizontalAlignment="Right" Margin="0,14,12,0" Name="button21" VerticalAlignment="Top" Width="43" TabIndex="5" FontSize="18" Click="button21_Click_2" Grid.Column="1" IsDefault="True">
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFEBEBEB" Offset="0.211"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.168"/>
+                    			<GradientStop Color="#FFF18686" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                    <Label Content="Label" FontSize="18" FontWeight="Bold" Foreground="Red" Height="44" HorizontalContentAlignment="Right" Margin="-242.036,46,42,10" Name="label51" VerticalContentAlignment="Center" Visibility="Hidden" Grid.Column="1" d:LayoutOverrides="HorizontalAlignment" />
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+
+
+            <MyNamespace:CloseableTabItem Header="Remaining Payment" Name="RemainingPayment" CloseTab="RemainingPayment_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid Background="Transparent" Name="gridremainingpayments" Height="610" Width="935">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250*" />
+                        <ColumnDefinition Width="212*" />
+                        <ColumnDefinition Width="296*" />
+                        <ColumnDefinition Width="64*" />
+                        <ColumnDefinition Width="277*" />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid AutoGenerateColumns="False" BorderThickness="10" CanUserSortColumns="True" HorizontalGridLinesBrush="{DynamicResource {x:Static SystemColors.InactiveBorderBrushKey}}" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" Margin="8,0,30,75" Name="dataGridremainingpayement" VerticalGridLinesBrush="#FF74AB18" RenderTransformOrigin="0.431,0.488" BorderBrush="#FFD42E2E" Grid.ColumnSpan="5" Foreground="Black">
+                    	<DataGrid.RowBackground>
+                    		<ImageBrush TileMode="FlipY"/>
+                    	</DataGrid.RowBackground>
+                        <DataGrid.Effect>
+                    		<DropShadowEffect/>
+                    	</DataGrid.Effect>
+                    	<DataGrid.Background>
+                    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    			<GradientStop Color="#FF549087" Offset="0"/>
+                    			<GradientStop Color="#FFFFFFD0" Offset="1"/>
+                                <GradientStop Color="#FF70B8CA" Offset="1" />
+                            </LinearGradientBrush>
+                    	</DataGrid.Background>
+                        <DataGrid.AlternatingRowBackground>
+                            <SolidColorBrush />
+                        </DataGrid.AlternatingRowBackground>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding OrderID}" Header="     Order ID        " />
+                            <DataGridTextColumn Binding="{Binding CustomerName}" Header="           Customer Name            " IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding DeliveryDate,StringFormat=\{0:dd-M-yyyy\}}" Header="      Delivery Date   " IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding CustomerContactNumber}" Header="     Contact Number     " IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding AdvancePayment}" Header="   Advance Payment   " IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding RemainingPayment}" Header="Remaining Payment" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding TotalCost}" Header=" Total Cost " IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Label Content="abc" Name="label123" Height="50" Margin="144,546,0,14" HorizontalAlignment="Left" Width="633" Grid.ColumnSpan="4" Grid.Column="1" FontSize="14"></Label>
+                </Grid>
+                
+            </MyNamespace:CloseableTabItem>
+
+            <MyNamespace:CloseableTabItem Header="Apply Payment" Name="ApplyPayment" CloseTab="ApplyPayment_CloseTab" FontWeight="Bold">
+                <MyNamespace:CloseableTabItem.Background>
+                    <SolidColorBrush />
+                </MyNamespace:CloseableTabItem.Background>
+                <Grid>
+                    <Label Content="Enter Order Id" Height="28" HorizontalAlignment="Left" Margin="148,61,0,0" Name="label37" VerticalAlignment="Top" Width="110" FontWeight="Bold" FontSize="14" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="273,65,0,0" Name="textBox28" VerticalAlignment="Top" Width="120" />
+                    <Button Content="Get Details" Height="33" HorizontalAlignment="Left" Margin="415,60,0,0" Name="button22" VerticalAlignment="Top" Width="86" Click="button22_Click" IsDefault="True">
+                    	<Button.Background>
+                    		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    			<GradientStop Color="#FFEBEBEB" Offset="0.151"/>
+                    			<GradientStop Color="#FFDDDDDD" Offset="0.121"/>
+                    			<GradientStop Color="#FFEB9292" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Button.Background>
+                    </Button>
+                    <Canvas Height="465" HorizontalAlignment="Left" Margin="29,116,0,0" Name="canvas1" VerticalAlignment="Top" Width="779">
+                        <Label Canvas.Left="352" Canvas.Top="24" Content="Customer Name" Height="28" Name="label38" Width="118" FontSize="14" FontWeight="Bold" />
+                        <Label Canvas.Left="501" Canvas.Top="27" Content="Label" Height="28" Name="label39" Width="246" FontSize="14" />
+                        <Label Canvas.Left="352" Canvas.Top="72" Content="Delivery Date" Height="28" Name="label40" FontSize="14" FontWeight="Bold" />
+                        <Label Canvas.Left="503" Canvas.Top="72" Content="Label" Height="28" Name="label41" Width="92" FontSize="14" />
+                        <Label Canvas.Left="352" Canvas.Top="118" Content="Total Cost" Height="28" Name="label42" FontSize="14" FontWeight="Bold" />
+                        <Label Canvas.Left="503" Canvas.Top="115" Content="Label" Height="28" Name="label43" Width="62" FontSize="14" />
+                        <Label Canvas.Left="350" Canvas.Top="205" Content="Remaining Payment" Height="28" Name="label44" FontSize="14" FontWeight="Bold" />
+                        <Label Canvas.Left="502" Canvas.Top="206" Content="Label" Height="28" Name="label45" FontSize="14" FontWeight="Bold" Width="63" />
+                        <Label Canvas.Left="351" Canvas.Top="249" Content="Amount received" Height="28" Name="label46" Width="134" FontSize="14" FontWeight="Bold" />
+                        <TextBox Canvas.Left="508" Canvas.Top="253" Height="23" Name="textBox29" Width="83" FontSize="14" FontWeight="Bold" />
+                        <Button Canvas.Left="362" Canvas.Top="349" Content="APPLY" Height="33" Name="button23" Width="100" Click="button23_Click" >
+                        	<Button.Background>
+                        		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        			<GradientStop Color="#FFEBEBEB" Offset="0.246"/>
+                        			<GradientStop Color="#FFDDDDDD" Offset="0.151"/>
+                        			<GradientStop Color="#FFE58585" Offset="1"/>
+                        		</LinearGradientBrush>
+                        	</Button.Background>
+                        </Button>
+                        <Label Canvas.Left="18" Canvas.Top="23" Content="Order status" Height="28" Name="label47" Width="102" FontSize="14" FontWeight="Bold" />
+                        <Label Canvas.Left="351" Canvas.Top="160" Content="Advanced Payment" Height="28" Name="label13" FontSize="14" FontWeight="Bold" />
+                        <Label Canvas.Left="503" Canvas.Top="162" Content="Label" Height="28" Name="label14" FontSize="14" FontWeight="Bold" Width="62" />
+                        <ComboBox Canvas.Left="119" Canvas.Top="26" Height="27" Name="comboBox7" Width="124" FontSize="14" ItemsSource="{Binding}" DisplayMemberPath="OrderStatusName" SelectionChanged="comboBox7_SelectionChanged_1" />
+                        <Label Canvas.Left="152" Canvas.Top="415" Content="Label" Height="44" Name="label50" Width="556" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="Red" Visibility="Hidden" />
+                    </Canvas>
+                </Grid>
+            </MyNamespace:CloseableTabItem>
+        </TabControl>
+        <Button Content="Logout" Height="38" Name="button1" Width="104" Click="button1_Click" Margin="1099,40,136,994" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FFD28383" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Change Password                " Height="38" Margin="1220,40,16,994" Name="button2" Width="104" Click="button2_Click_1" >
+        	<Button.Background>
+        		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+        			<GradientStop Color="#FFF3F3F3" Offset="0"/>
+        			<GradientStop Color="#FFEBEBEB" Offset="0.211"/>
+        			<GradientStop Color="#FFDDDDDD" Offset="0.155"/>
+        			<GradientStop Color="#FFEB7171" Offset="1"/>
+        		</LinearGradientBrush>
+        	</Button.Background>
+        </Button>
+        <Label Content="Yamuna Art Printers" Height="82" HorizontalAlignment="Left" Margin="371,28,0,0" Name="label11" VerticalAlignment="Top" Width="407" FontWeight="Bold" FontSize="60" FontStyle="Italic" FontFamily="Chiller" Foreground="#FF3D0475" />
+        <Image Height="112" HorizontalAlignment="Left" Margin="2,2,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="137" Source="/PresentationLayer;component/Images/shrinath%20ji.jpg" MouseDown="image1_MouseDown" />
+        <MediaElement Height="120"  HorizontalAlignment="Left" Margin="0,-1,0,0" Name="mediaElement1" VerticalAlignment="Top" Width="143" Source="E:\songs\New folder\Shahrukh khan\3(mp3pk.com).mp3" LoadedBehavior="Pause" Cursor="Hand" ToolTip="Click Here To Play Song" />
+        <Label Height="28" HorizontalAlignment="Left" Margin="1118,93,0,0" Name="label23" VerticalAlignment="Top" Width="36" MouseDown="label23_MouseDown" Cursor="Hand" ToolTip="Click here to open facebook">
+            <Label.Background>
+                <ImageBrush ImageSource="/PresentationLayer;component/Images/facebook%20icon.jpg" />
+            </Label.Background>
+        </Label>
+        <Label Height="28" HorizontalAlignment="Left" Margin="-4,86,0,0" Name="label27" VerticalAlignment="Top" Width="41" MouseDown="label27_MouseDown" Cursor="Hand" ToolTip="Click Here To Select Song">
+            <Label.Background>
+                <ImageBrush ImageSource="/PresentationLayer;component/Images/Music-icon.png" />
+            </Label.Background>
+        </Label>
+        <Label Height="28" HorizontalAlignment="Left" Margin="1161,94,0,0" Name="label33" VerticalAlignment="Top" Width="40" MouseDown="label33_MouseDown" Cursor="Hand" ToolTip="Click here to open gmail">
+            <Label.Background>
+                <ImageBrush ImageSource="/PresentationLayer;component/Images/gmail%20icon%20png.png" />
+            </Label.Background>
+        </Label>
+        <Label Height="28" HorizontalAlignment="Left" Margin="1207,94,0,0" Name="label34" VerticalAlignment="Top" Width="33" MouseDown="label34_MouseDown" Cursor="Hand" ToolTip="Click here to open chrome">
+            <Label.Background>
+                <ImageBrush ImageSource="/PresentationLayer;component/Images/chorme%20icon%20copy.png" />
+            </Label.Background>
+        </Label>
+        <Label Content="Welcome " Height="32" HorizontalAlignment="Left" Margin="1099,2,0,0" Name="label10" VerticalAlignment="Top" Width="172" FontSize="16" FontWeight="Bold" />
+        <Label Content="Label" FontSize="18" FontWeight="Bold" Foreground="Red" Height="44" HorizontalContentAlignment="Center" Margin="743,93,220,935" Name="label52" VerticalContentAlignment="Center" Visibility="Hidden" />
+        <Label Height="28" HorizontalAlignment="Left" Margin="1246,94,0,0" Name="label81" VerticalAlignment="Top" MouseUp="label81_MouseUp" Width="36" Cursor="Help" ToolTip="May i help you?">
+            <Label.Background>
+                <ImageBrush ImageSource="/PresentationLayer;component/Images/question%20mark%20copy.png" />
+            </Label.Background>
+        </Label>
+    </Grid>
+    
+</Window>

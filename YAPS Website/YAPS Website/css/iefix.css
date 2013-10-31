@@ -1,0 +1,5 @@
+.clearfix{
+ zoom: 1;     /* triggers hasLayout */
+}
+img,div,h1,input{ behavior: url(js/iepngfix.htc);}
+

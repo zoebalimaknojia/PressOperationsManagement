@@ -1,0 +1,409 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="YAPS_Website.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript">
+        function demofunction(vcontrol) {
+            var pt = vcontrol.getAttribute("id");
+            alert(pt);
+        }
+    </script>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <script src="menu.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="css/craftyslide.css" rel="stylesheet" type="text/css" />
+    <link href="css/global.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/craftyslide.js" type="text/javascript"></script>
+    <script src="js/craftyslide.min.js" type="text/javascript"></script>
+    <script src="js/slides.min.jquery.js" type="text/javascript"></script>
+    <title>YAPS</title>
+    <script type="text/javascript">
+        $(function () {
+            $('#slides').slides({
+                preload: true,
+                preloadImage: 'img/loading.gif',
+                play: 5000,
+                pause: 2500,
+                hoverPause: true,
+                animationStart: function (current) {
+                    $('.caption').animate({
+                        bottom: -35
+                    }, 100);
+                    if (window.console && console.log) {
+                        // example return of current slide number
+                        console.log('animationStart on slide: ', current);
+                    };
+                },
+                animationComplete: function (current) {
+                    $('.caption').animate({
+                        bottom: 0
+                    }, 200);
+                    if (window.console && console.log) {
+                        // example return of current slide number
+                        console.log('animationComplete on slide: ', current);
+                    };
+                },
+                slidesLoaded: function () {
+                    $('.caption').animate({
+                        bottom: 0
+                    }, 200);
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            //move the image in pixel
+            var move = -15;
+
+            //zoom percentage, 1.2 =120%
+            var zoom = 1.2;
+
+            //On mouse over those thumbnail
+            $('.zitem').hover(function () {
+
+                //Set the width and height according to the zoom percentage
+                width = $('.zitem').width() * zoom;
+                height = $('.zitem').height() * zoom;
+
+                //Move and zoom the image
+                $(this).find('img').stop(false, true).animate({ 'width': width, 'height': height, 'top': move, 'left': move }, { duration: 200 });
+
+                //Display the caption
+                $(this).find('div.caption').stop(false, true).fadeIn(200);
+            },
+	function () {
+	    //Reset the image
+	    $(this).find('img').stop(false, true).animate({ 'width': $('.zitem').width(), 'height': $('.zitem').height(), 'top': '0', 'left': '0' }, { duration: 100 });
+
+	    //Hide the caption
+	    $(this).find('div.caption').stop(false, true).fadeOut(200);
+	});
+        });
+
+    </script>
+    <style type="text/css">
+        .zitem
+        {
+            width: 220px;
+            height: 205px;
+            border: 4px solid #222;
+            margin: 5px 5px 5px 0; /* required to hide the image after resized */
+            overflow: hidden; /* for child absolute position */
+            position: relative; /* display div in line */
+            float: left;
+        }
+        
+        .zitem .caption
+        {
+            width: 200px;
+            height: 40px;
+            background: #000;
+            color: #fff;
+            font-weight: bold; /* fix it at the bottom */
+            position: absolute;
+            bottom: -1px; /* fix IE issue */
+            left: 0; /* hide it by default */
+            display: none; /* opacity setting */
+            filter: alpha(opacity=70); /* ie  */
+            -moz-opacity: 0.7; /* old mozilla browser like netscape  */
+            -khtml-opacity: 0.7; /* for really really old safari */
+            opacity: 0.7; /* css standard, currently it works in most modern browsers like firefox,  */
+        }
+        
+        .zitem .caption a
+        {
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px; /* add spacing and make the whole row clickable*/
+            padding: 5px;
+            display: block;
+        }
+        
+        img
+        {
+            border: 0; /* allow javascript moves the img position*/
+            position: relative;
+        }
+        
+        .clear
+        {
+            clear: both;
+        }
+    </style>
+    
+    <script type="text/javascript">
+            (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        } (document, 'script', 'facebook-jssdk'));</script>
+    <link rel="stylesheet" type="text/css" href="js/lightbox/themes/evolution-dark/jquery.lightbox.css" />
+    <script type="text/javascript" src="js/lightbox/jquery.lightbox.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('.lightbox').lightbox();
+        });
+    </script>
+    <link href="menu.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="clsBg_top">
+        <div class="clsBg_bottom">
+            <center>
+                <table>
+                    <tr>
+                        <td align="center">
+                            <div>
+                                <div class="obj">
+                                    <object width="1024px" height="100px">
+                                        <param name="movie" value="banner.swf" />
+                                        <param name="Loop" value="1" />
+                                        <param name="Quality" value="High" />
+                                        <param name="wmode" value="transparent" />
+                                        <embed src="banner.swf" width="1024px" height="100px" pluginspage="http://www.macromedia.com/go/getflashplayer"
+                                            type="application/x-shockwave-flash" wmode="transparent" />
+                                    </object>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td align="center" valign="top">
+                            <div id="menu">
+                                <ul class="menu">
+                                    <li><a href="Home.aspx"><span>Home</span></a> </li>
+                                    <li><a href="#" class="parent"><span>Books</span></a>
+                                        <div>
+                                            <ul class="one">
+                                                <li><a href="#" class="parent"><span>BusinessBooks</span></a>
+                                                    <div>
+                                                        <ul>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Books/BusinessBooks/AnnualReports"><span>
+                                                                Annual Reports</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Books/BusinessBooks/Catalogue"><span>Catalogue</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Books/BusinessBooks/InternalReports"><span>
+                                                                Internal Reports</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li><a href="Thumbnails.aspx?id=/Categories/Books/Novels"><span>Novels</span></a></li>
+                                                <li><a href="Thumbnails.aspx?id=/Categories/Books/Religious"><span>Religious</span></a></li>
+                                                <li><a href="#" class="parent"><span>StationeryBooks</span></a>
+                                                    <div>
+                                                        <ul>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Books/Stationery Books/Pamplets"><span>Pamplets</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Books/Stationery Books/TextBooks"><span>
+                                                                Text Books</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Books/Stationery Books/WritingBooks"><span>
+                                                                Writing Books</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#" class="parent"><span>Cards</span></a>
+                                        <div>
+                                            <ul class="one">
+                                                <li><a href="Thumbnails.aspx?id=/Categories/Cards/Business"><span>Business</span></a></li>
+                                                <li><a href="#" class="parent"><span>Greeting</span></a>
+                                                    <div>
+                                                        <ul>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Business"><span>Birthday</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Greeting/Family"><span>Family</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Greeting/Friends"><span>Friends</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Greeting/GetWellSoon"><span>Get Well
+                                                                Soon</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Greeting/Love"><span>Love</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Greeting/NewYear"><span>New Year</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Greeting/Others"><span>Others</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li><a href="#" class="parent"><span>Invitation</span></a>
+                                                    <div>
+                                                        <ul>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Invitation/BabyShower"><span>Baby
+                                                                Shower</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Invitation/Birthday"><span>Birthday</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Invitation/Engagement"><span>Engagement</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Invitation/Openings"><span>Openings</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Invitation/ThreadCeremony"><span>Thread
+                                                                Ceremony</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/Cards/Invitation/Wedding"><span>Wedding</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li><a href="Thumbnails.aspx?id=/Categories/Cards/Menu"><span>Menu</span></a></li>
+                                                <li><a href="Thumbnails.aspx?id=/Categories/Cards/Rack"><span>Rack</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#" class="parent"><span>Large Formats & Signs</span></a>
+                                        <div>
+                                            <ul class="one">
+                                                <li><a href="Thumbnails.aspx?id=/Categories/LargeFormatsSigns/CampaigningBanner"><span>
+                                                    Campaigning Banner</span></a></li>
+                                                <li><a href="Thumbnails.aspx?id=/Categories/LargeFormatsSigns/CanvasPrints"><span>Canvas
+                                                    Prints</span></a></li>
+                                                <li><a href="Thumbnails.aspx?id=/Categories/LargeFormatsSigns/Posters"><span>Posters</span></a></li>
+                                                <li><a href="Thumbnails.aspx?id=/Categories/LargeFormatsSigns/WallGraphics"><span>Wall
+                                                    Graphics</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#" class="parent"><span>Marketting Promotion</span></a>
+                                        <div>
+                                            <ul class="one">
+                                                <li><a href="Thumbnails.aspx?id=/Categories/MarketingPromotion/Brochure"><span>Brochure</span></a></li>
+                                                <li><a href="#" class="parent"><span>Calendar</span></a>
+                                                    <div>
+                                                        <ul>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/MarketingPromotion/Calendar/WithoutPicture">
+                                                                <span>Without Picture</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/MarketingPromotion/Calendar/WithPicture">
+                                                                <span>With Picture</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li><a href="Thumbnails.aspx?id=/Categories/MarketingPromotion/DoorHangers"><span>Door
+                                                    Hangers</span></a></li>
+                                                <li><a href="Thumbnails.aspx?id=/Categories/MarketingPromotion/SalesSheets"><span>Sales
+                                                    Sheets</span></a></li>
+                                                <li><a href="Thumbnails.aspx?id=/Categories/MarketingPromotion/Tickets" class="parent">
+                                                    <span>Tickets</span></a>
+                                                    <div>
+                                                        <ul>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/MarketingPromotion/Tickets/Coupons"><span>
+                                                                Coupons</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/MarketingPromotion/Tickets/EventPasses">
+                                                                <span>Event Passes</span></a></li>
+                                                            <li><a href="Thumbnails.aspx?id=/Categories/MarketingPromotion/Tickets/Movie"><span>
+                                                                Movie</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="last"><a href="Contact Us.aspx"><span>Contact Us</span></a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td align="center" valign="top">
+                        </td>
+                    </tr>
+                </table>
+            </center>
+            <!--</div>-->
+            <div class="Container">
+                <div class="clsContent clearfix">
+                    <!--slider-->
+                    <div id="Sidebar">
+                        <div class="block">
+                            <div class="black_tb">
+                                <div class="black_rb">
+                                    <div class="black_bb">
+                                        <div class="black_lb">
+                                            <div class="black_tlc">
+                                                <div class="black_trc">
+                                                    <div class="black_blc">
+                                                        <div class="black_brc">
+                                                            <div class="cls100_p1">
+                                                                <div class="clsmain_cut">
+                                                                    <div class="clsFriends">
+                                                                        <div class="cls_h2">
+                                                                            <div class="clsLeftbar">
+                                                                                <div class="clsRightbar">
+                                                                                    <div class="clsCenterbar">
+                                                                                        <div class="cls_h2">
+                                                                                            <h2>
+                                                                                                Time</h2>
+                                                                                        </div>
+                                                                                        <div align="center">
+                                                                                            <embed src="http://www.clocklink.com/clocks/0056-black.swf?TimeZone=GMT0530&" width="150"
+                                                                                                height="150" wmode="transparent" type="application/x-shockwave-flash">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="clsFriends">
+                                                                        <div class="cls_h2">
+                                                                            <div class="clsLeftbar">
+                                                                                <div class="clsRightbar">
+                                                                                    <div class="clsCenterbar">
+                                                                                        <div class="cls_h2">
+                                                                                            <h2>
+                                                                                                Calender</h2>
+                                                                                        </div>
+                                                                                        <div align="center">
+                                                                                            <script charset="UTF-8" src="http://widget24.com/code/calendar?data%5BWidget%5D%5Bcss%5D=black"
+                                                                                                type="text/javascript"></script>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="clsNews">
+                                                                        <div class="cls_h2">
+                                                                            <div class="clsLeftbar">
+                                                                                <div class="clsRightbar">
+                                                                                    <div class="clsCenterbar">
+                                                                                        <div class="cls_h2">
+                                                                                            <h2>
+                                                                                                NEWS</h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <script type="text/javascript" src="//www.gmodules.com/ig/ifr?url=http://andrewgadget.googlepages.com/google-news.xml&amp;synd=open&amp;w=250&amp;h=400&amp;title=News&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end slider-->
+                    <div id="selMain">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div id="Footer">
+                        <p>
+                            © Copyright Yamuna Art Printers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

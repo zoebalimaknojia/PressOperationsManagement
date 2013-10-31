@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F25C0354-CAC3-4FFA-9EDA-3CE12E483096}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YAPS_Website</RootNamespace>
+    <AssemblyName>YAPS Website</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="banner.swf" />
+    <Content Include="Categories\Cards\Invitation\Wedding\1.jpg" />
+    <Content Include="Categories\Cards\Invitation\Wedding\2.jpg" />
+    <Content Include="Categories\Cards\Invitation\Wedding\3.jpg" />
+    <Content Include="Categories\Cards\Invitation\Wedding\4.jpg" />
+    <Content Include="Categories\Cards\Invitation\Wedding\5.jpg" />
+    <Content Include="Contact Us.aspx" />
+    <Content Include="images\clock.swf" />
+    <Content Include="images\back.jpg" />
+    <Content Include="images\columns.png" />
+    <Content Include="images\item.png" />
+    <Content Include="images\subitem.png" />
+    <Content Include="js\lightbox\jquery.lightbox.min.js" />
+    <Content Include="js\lightbox\themes\evolution-dark\images\jquery-lightbox-theme.gif" />
+    <Content Include="js\lightbox\themes\evolution-dark\images\jquery-lightbox-theme.png" />
+    <Content Include="js\lightbox\themes\evolution-dark\images\loading.gif" />
+    <Content Include="js\lightbox\themes\evolution-dark\jquery.lightbox.css" />
+    <Content Include="js\lightbox\themes\evolution-dark\jquery.lightbox.ie6.css" />
+    <Content Include="menu.css" />
+    <Content Include="menu.js" />
+    <Content Include="css\craftyslide.css" />
+    <Content Include="css\global.css" />
+    <Content Include="css\iefix.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Home.aspx" />
+    <Content Include="images\ARROW.jpg" />
+    <Content Include="images\back.png" />
+    <Content Include="images\background.jpg" />
+    <Content Include="images\banner.jpg" />
+    <Content Include="images\base-select.gif" />
+    <Content Include="images\base.gif" />
+    <Content Include="images\base.png" />
+    <Content Include="images\bg_bottom.jpg" />
+    <Content Include="images\black_bb.jpg" />
+    <Content Include="images\black_blc.jpg" />
+    <Content Include="images\black_brc.jpg" />
+    <Content Include="images\black_lb.jpg" />
+    <Content Include="images\black_rb.jpg" />
+    <Content Include="images\black_tb.jpg" />
+    <Content Include="images\black_tlc.jpg" />
+    <Content Include="images\black_trc.jpg" />
+    <Content Include="images\featured_img1.jpg" />
+    <Content Include="images\featured_img2.jpg" />
+    <Content Include="images\featured_img3.jpg" />
+    <Content Include="images\featured_img4.jpg" />
+    <Content Include="images\featured_img5.jpg" />
+    <Content Include="images\header_bg.jpg" />
+    <Content Include="images\img6.jpg" />
+    <Content Include="images\lavalamp.gif" />
+    <Content Include="images\Login.jpg" />
+    <Content Include="images\Logo.jpg" />
+    <Content Include="images\Lost_password.jpg" />
+    <Content Include="images\main_cut.jpg" />
+    <Content Include="images\menu_border.jpg" />
+    <Content Include="images\newster_img1.jpg" />
+    <Content Include="images\newster_img2.jpg" />
+    <Content Include="images\onair_img.jpg" />
+    <Content Include="images\pagination.png" />
+    <Content Include="images\pix.gif" />
+    <Content Include="images\redbar_centercut.jpg" />
+    <Content Include="images\redbar_leftcut.jpg" />
+    <Content Include="images\redbar_rightcut.jpg" />
+    <Content Include="images\stars.jpg" />
+    <Content Include="images\sub-select.gif" />
+    <Content Include="images\sub.gif" />
+    <Content Include="images\sub.png" />
+    <Content Include="images\yellowbar_center.GIF" />
+    <Content Include="images\yellowbar_centercut.jpg" />
+    <Content Include="images\yellowbar_left.GIF" />
+    <Content Include="images\yellowbar_leftcut.jpg" />
+    <Content Include="images\yellowbar_right.GIF" />
+    <Content Include="images\yellowbar_rightcut.jpg" />
+    <Content Include="img\arrow-next.png" />
+    <Content Include="img\arrow-prev.png" />
+    <Content Include="img\background.png" />
+    <Content Include="img\example-frame.png" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\new-ribbon.png" />
+    <Content Include="img\pagination.png" />
+    <Content Include="img\slide-1.jpg" />
+    <Content Include="img\slide-2.jpg" />
+    <Content Include="img\slide-3.jpg" />
+    <Content Include="img\slide-4.jpg" />
+    <Content Include="img\slide-5.jpg" />
+    <Content Include="img\slide-6.jpg" />
+    <Content Include="img\slide-7.jpg" />
+    <Content Include="img\slide.jpg" />
+    <Content Include="js\craftyslide.js" />
+    <Content Include="js\craftyslide.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\slides.min.jquery.js" />
+    <Content Include="src\jquery.lightbox.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Thumbnails.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Card.cs" />
+    <Compile Include="Contact Us.aspx.cs">
+      <DependentUpon>Contact Us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact Us.aspx.designer.cs">
+      <DependentUpon>Contact Us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Thumbnails.aspx.cs">
+      <DependentUpon>Thumbnails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Thumbnails.aspx.designer.cs">
+      <DependentUpon>Thumbnails.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site1.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Categories\Books\BusinessBooks\AnnualReports\" />
+    <Folder Include="Categories\Books\BusinessBooks\Catalogue\" />
+    <Folder Include="Categories\Books\BusinessBooks\InternalReports\" />
+    <Folder Include="Categories\Books\Novels\" />
+    <Folder Include="Categories\Books\Religious\" />
+    <Folder Include="Categories\Books\StationeryBooks\Pamplets\" />
+    <Folder Include="Categories\Books\StationeryBooks\TextBooks\" />
+    <Folder Include="Categories\Books\StationeryBooks\WritingBooks\" />
+    <Folder Include="Categories\Cards\Business\" />
+    <Folder Include="Categories\Cards\Greeting\Birthday\" />
+    <Folder Include="Categories\Cards\Greeting\Family\" />
+    <Folder Include="Categories\Cards\Greeting\Friends\" />
+    <Folder Include="Categories\Cards\Greeting\GetWellSoon\" />
+    <Folder Include="Categories\Cards\Greeting\Love\" />
+    <Folder Include="Categories\Cards\Greeting\NewYear\" />
+    <Folder Include="Categories\Cards\Invitation\BabyShower\" />
+    <Folder Include="Categories\Cards\Invitation\Birthday\" />
+    <Folder Include="Categories\Cards\Invitation\Engagement\" />
+    <Folder Include="Categories\Cards\Invitation\Openings\" />
+    <Folder Include="Categories\Cards\Invitation\ThreadCeremony\" />
+    <Folder Include="Categories\Cards\Menu\" />
+    <Folder Include="Categories\Cards\Rack\" />
+    <Folder Include="Categories\LargeFormatsSigns\CampaigningBanner\" />
+    <Folder Include="Categories\LargeFormatsSigns\CanvasPrints\" />
+    <Folder Include="Categories\LargeFormatsSigns\Posters\" />
+    <Folder Include="Categories\LargeFormatsSigns\WallGraphics\" />
+    <Folder Include="Categories\MarketingPromotion\Brochure\" />
+    <Folder Include="Categories\MarketingPromotion\Calendar\WithoutPicture\" />
+    <Folder Include="Categories\MarketingPromotion\Calendar\WithPicture\" />
+    <Folder Include="Categories\MarketingPromotion\DoorHangers\" />
+    <Folder Include="Categories\MarketingPromotion\SalesSheets\" />
+    <Folder Include="Categories\MarketingPromotion\Tickets\Coupons\" />
+    <Folder Include="Categories\MarketingPromotion\Tickets\EventPasses\" />
+    <Folder Include="Categories\MarketingPromotion\Tickets\Movie\" />
+    <Folder Include="menu\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8010</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
